@@ -8,6 +8,7 @@ router
   .get("/", productsController.findAll)
   .get("/:id", productsController.findOne)
   .post("/", multer.uploadImage.single("image"), productsController.create)
+  .put("/:id", multer.uploadImage.single("image"), productsController.update)
   .delete("/:id", productsController.delete);
 
 module.exports = router;

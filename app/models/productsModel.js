@@ -71,6 +71,33 @@ module.exports = {
       });
     });
   },
+
+  updateProduct: (id, data) => {
+    return new Promise((resolve, reject) => {
+      connection.query(
+        "UPDATE products SET ? WHERE id = ?",
+        [data, id],
+        (err, result) => {
+          if (!err) {
+            connection.query(
+              "SELECT * FROM products WHERE id = ?",
+              id,
+              (err, result) => {
+                if (!err) {
+                  resolve(result);
+                } else {
+                  reject(new Error("Internal server error"));
+                }
+              }
+            );
+          } else {
+            reject(new Error("Internal server error"));
+          }
+        }
+      );
+    });
+  },
+
   deleteProduct: (id) => {
     return new Promise((resolve, reject) => {
       connection.query(
@@ -86,6 +113,7 @@ module.exports = {
       );
     });
   },
+
   findProduct: (id, message) => {
     return new Promise((resolve, reject) => {
       connection.query(

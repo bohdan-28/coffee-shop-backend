@@ -102,6 +102,57 @@ module.exports = {
       });
   },
 
+  update: (req, res) => {
+    const id = req.params.id;
+    const checkId = /^[0-9]+$/;
+
+    const { name, price, stock, category, description, size } = req.body;
+
+    if (!name || !price || !stock || !category || !description || !size) {
+      helper.printError(res, 400, "Content cannot be empty");
+      return;
+    } else if (id.match(checkId) == null) {
+      helper.printError(res, 400, "Provide a valid id!");
+      return;
+    }
+
+    const data = {
+      name,
+      price,
+      stock,
+      category,
+      description,
+      size,
+      updated_at: new Date(),
+    };
+
+    productsModel
+      .findProduct(id, "update")
+      .then((result) => {
+        let image;
+        if (!req.file) {
+          image = result[0].image;
+        } else {
+          const oldImage = result[0].image;
+          if (oldImage !== "images\\default_products.jpg") {
+            removeImage(oldImage);
+          }
+          image = req.file.path;
+        }
+        data.image = image;
+        return productsModel.updateProduct(id, data);
+      })
+      .then((result) => {
+        helper.printSuccess(res, 200, "Product has been updated", result);
+      })
+      .catch((err) => {
+        if (err.message === "Internal server error") {
+          helper.printError(res, 500, err.message);
+        }
+        helper.printError(res, 400, err.message);
+      });
+  },
+
   delete: (req, res) => {
     const id = req.params.id;
     productsModel
