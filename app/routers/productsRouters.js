@@ -6,6 +6,8 @@ const productsController = require("../controllers/productsController");
 
 router
   .get("/", productsController.findAll)
-  .get("/:id", productsController.findOne);
+  .get("/:id", productsController.findOne)
+  .post("/", multer.uploadImage.single("image"), productsController.create)
+  .delete("/:id", productsController.delete);
 
 module.exports = router;

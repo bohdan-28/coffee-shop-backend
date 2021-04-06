@@ -33,6 +33,7 @@ module.exports = {
       );
     });
   },
+
   getProductsById: (id) => {
     return new Promise((resolve, reject) => {
       connection.query(
@@ -41,6 +42,62 @@ module.exports = {
         (err, result) => {
           if (!err) {
             resolve(result);
+          } else {
+            reject(new Error("Internal server error"));
+          }
+        }
+      );
+    });
+  },
+
+  createProduct: (data) => {
+    return new Promise((resolve, reject) => {
+      connection.query("INSERT INTO products SET ?", data, (err, result) => {
+        if (!err) {
+          connection.query(
+            "SELECT * FROM products WHERE id = ?",
+            result.insertId,
+            (err, result) => {
+              if (!err) {
+                resolve(result);
+              } else {
+                reject(new Error("Internal server error"));
+              }
+            }
+          );
+        } else {
+          reject(new Error("Internal server error"));
+        }
+      });
+    });
+  },
+  deleteProduct: (id) => {
+    return new Promise((resolve, reject) => {
+      connection.query(
+        "DELETE FROM products WHERE id = ?",
+        id,
+        (err, result) => {
+          if (!err) {
+            resolve(result);
+          } else {
+            reject(new Error("Internal server error"));
+          }
+        }
+      );
+    });
+  },
+  findProduct: (id, message) => {
+    return new Promise((resolve, reject) => {
+      connection.query(
+        "SELECT * FROM products WHERE id = ?",
+        id,
+        (err, result) => {
+          if (!err) {
+            if (result.length == 1) {
+              resolve(result);
+            } else {
+              reject(new Error(`Cannot ${message} product with id = ${id}`));
+            }
           } else {
             reject(new Error("Internal server error"));
           }
