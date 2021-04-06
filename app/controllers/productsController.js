@@ -38,4 +38,24 @@ module.exports = {
         helper.printError(res, 500, err.message);
       });
   },
+  findOne: (req, res) => {
+    const id = req.params.id;
+    console.log(id);
+    productsModel
+      .getProductsById(id)
+      .then((result) => {
+        if (result < 1) {
+          helper.printError(
+            res,
+            400,
+            `Cannot find one product with id = ${id}`
+          );
+          return;
+        }
+        helper.printSuccess(res, 200, "Find one product successfully", result);
+      })
+      .catch((err) => {
+        helper.printError(res, 500, err.message);
+      });
+  },
 };
