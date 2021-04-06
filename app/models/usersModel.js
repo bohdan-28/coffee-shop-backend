@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const connection = require("../configs/dbConfig");
-const helper = require("../helpers/linkPaginate");
+// const helper = require("../helpers/linkPaginate");
 
 exports.getAllUsers = (queryPage, queryPerPage, keyword, sortBy, order) => {
   return new Promise((resolve, reject) => {
