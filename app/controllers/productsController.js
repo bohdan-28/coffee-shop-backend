@@ -22,13 +22,6 @@ module.exports = {
           helper.printError(res, 400, "Products not found");
           return;
         }
-        for (let i = 0; i < perPage; i++) {
-          if (result[i] === undefined) {
-            break;
-          } else {
-            delete result[i].password;
-          }
-        }
         helper.printPaginate(
           res,
           200,

@@ -54,6 +54,7 @@ exports.findOne = (req, res) => {
         helper.printError(res, 400, `Cannot find one users with id = ${id}`);
         return;
       }
+      delete result[0].password;
       helper.printSuccess(res, 200, "Find one users successfully", result);
     })
     .catch((err) => {
@@ -189,9 +190,10 @@ exports.verify = async (req, res) => {
 };
 
 exports.update = async (req, res) => {
+  const id = req.params.id;
+
   const {
     email,
-    password,
     phoneNumber,
     username,
     firstname,
@@ -210,18 +212,7 @@ exports.update = async (req, res) => {
     address,
     gender,
     dateOfBirth,
-    image,
   };
-
-  try {
-    const userPassword = await usersModel.checkPassword(password);
-    if (userPassword.length < 1) {
-      data.password = await hash.hashPassword(password);
-    }
-  } catch (err) {
-    helper.printError(res, 400, err.message);
-    return;
-  }
 
   usersModel
     .findUser(id, "update")
@@ -252,6 +243,8 @@ exports.update = async (req, res) => {
 };
 
 exports.delete = (req, res) => {
+  const id = req.params.id;
+
   usersModel
     .findUser(id, "delete")
     .then((result) => {
@@ -289,8 +282,6 @@ exports.login = (req, res) => {
     .login(data)
     .then((result) => {
       delete result.password;
-      delete result.createdAt;
-      delete result.updatedAt;
       const payload = {
         id: result.id,
         email: result.email,

@@ -1,6 +1,5 @@
 const bcrypt = require("bcrypt");
 const connection = require("../configs/dbConfig");
-// const helper = require("../helpers/linkPaginate");
 
 exports.getAllUsers = (queryPage, queryPerPage, keyword, sortBy, order) => {
   return new Promise((resolve, reject) => {
@@ -20,7 +19,7 @@ exports.getAllUsers = (queryPage, queryPerPage, keyword, sortBy, order) => {
         const firstData = perPage * page - perPage;
         connection.query(
           `SELECT * FROM users WHERE username LIKE ? OR email LIKE ? ORDER BY ${sortBy} ${order} LIMIT ?, ?`,
-          [`%${keyword}%`, `%${keyword}%`, `%${keyword}%`, firstData, perPage],
+          [`%${keyword}%`, `%${keyword}%`, firstData, perPage],
           (err, result) => {
             if (err) {
               reject(new Error("Internal server error"));
