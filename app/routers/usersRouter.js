@@ -10,7 +10,6 @@ router
   .post("/", multer.uploadImage.single("image"), usersController.create)
   .get("/auth/verify", usersController.verify)
   .post("/auth/login", usersController.login)
-  .post("/auth/check-email", usersController.checkEmail)
   .post("/auth/forgot-password", usersController.forgotPassword)
   .put("/auth/reset-password", usersController.resetPassword)
   .put("/:id", multer.uploadImage.single("image"), usersController.update)

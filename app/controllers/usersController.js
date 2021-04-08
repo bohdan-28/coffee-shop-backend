@@ -6,6 +6,7 @@ const usersModel = require("../models/usersModel");
 const helper = require("../helpers/printHelper");
 const mail = require("../helpers/sendEmail");
 const hash = require("../helpers/hashPassword");
+const validation = require("../helpers/validation");
 const secretKey = process.env.SECRET_KEY;
 
 exports.findAll = (req, res) => {
@@ -68,6 +69,13 @@ exports.create = async (req, res) => {
     image = "images\\avatar.png";
   } else {
     image = req.file.path;
+  }
+
+  const validate = validation.validationUsers(req.body);
+
+  if (validate.error) {
+    helper.printError(res, 400, validate.error.details[0].message);
+    return;
   }
 
   const {
@@ -311,30 +319,6 @@ exports.login = (req, res) => {
       } else {
         helper.printError(res, 500, err.message);
       }
-    });
-};
-
-exports.checkEmail = (req, res) => {
-  const email = req.body.email;
-
-  const data = email;
-
-  usersModel
-    .findEmail(data)
-    .then((result) => {
-      if (result.length < 1) {
-        helper.printError(res, 400, "Email is not registered!");
-        return;
-      }
-      helper.printSuccess(
-        res,
-        200,
-        "Please follow next step to reset your password!",
-        result
-      );
-    })
-    .catch((err) => {
-      helper.printError(res, 500, err.message);
     });
 };
 
