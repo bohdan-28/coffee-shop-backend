@@ -81,68 +81,82 @@ module.exports = {
   readAll: async (req, res) => {
     try {
       // Ambil Query dari URL
-      const limit = req.query.limit ? req.query.limit : "5";
+      const perPage = req.query.perPage ? req.query.perPage : "5";
       const sort = req.query.sort ? req.query.sort : "desc";
       const range = req.query.range ? toUpper(req.query.range) : "YEAR";
       const page = req.query.page ? req.query.page : "1";
-      const offset = page === 1 ? 0 : (page - 1) * limit;
+      const offset = page === 1 ? 0 : (page - 1) * perPage;
       const user = req.query.user ? req.query.user : "%";
       const pending = req.query.pending ? req.query.pending : "%";
       // Ambil Dari Modal pakai Await
-      const allIncome = await ordersModel.totalIncome();
+      // const allIncome = await ordersModel.totalIncome();
       const total = await ordersModel.totalItems(range, pending, user);
-      const tdyIncome = await ordersModel.totalRange("day");
-      const incomeYesterday = await ordersModel.totalYesterday();
-      const ordersAll = await ordersModel.totalOrders("YEAR", pending);
-      const ordersLastweek = await ordersModel.totalLastWeek();
-      const ordersThisWeek = await ordersModel.totalOrders("WEEK", pending);
+      // const tdyIncome = await ordersModel.totalRange("day");
+      // const incomeYesterday = await ordersModel.totalYesterday();
+      // const ordersAll = await ordersModel.totalOrders("YEAR", pending);
+      // const ordersLastweek = await ordersModel.totalLastWeek();
+      // const ordersThisWeek = await ordersModel.totalOrders("WEEK", pending);
       ordersModel
-        .allOrder(offset, limit, sort, range, user, pending)
+        .allOrder(offset, perPage, sort, range, user, pending)
         .then((response) => {
           if (response.length != 0) {
-            const pagination = {
-              // Halaman yang sedang diakses
-              page,
-              // Batasan Banyaknya hasil per halaman
-              limit,
-              // range data yang sedang ditampilkan
-              range,
-              // Banyaknya Invoices yang terdaftar
-              allOrders: ordersAll[0].total,
-              // Banyak Order Minggu ini
-              thisWeekOrders: ordersThisWeek[0].total,
-              // Banyak Order Minggu kemarin
-              lastWeekOrders: ordersLastweek[0].total,
-              // Order Gain Lastweek
-              gainOrders:
-                ((ordersThisWeek[0].total - ordersLastweek[0].total) /
-                  ordersLastweek[0].total) *
-                100,
-              // Banyaknya Orders Yang Sesuai
-              totalResult: total[0].total,
-              // Jumlah Halaman
-              totalPages: Math.ceil(total[0].total / limit),
-              // Jumlah Total Pemasukan
-              totalIncome: Number(allIncome[0].totalIncome),
-              // Jumlah Pemasukan Hari Ini
-              todaysIncome: Number(tdyIncome[0].totalIncome),
-              // Jumlah Pemasukan Kemarin
-              YesterdayIncome: Number(incomeYesterday[0].yesterdayIncome),
-              // Kenaikan Penjualan
-              gainIncome: (
-                ((tdyIncome[0].totalIncome -
-                  incomeYesterday[0].yesterdayIncome) /
-                  incomeYesterday[0].yesterdayIncome) *
-                100
-              ).toFixed(2),
-            };
+            // const pagination = {
+            // Halaman yang sedang diakses
+            // page,
+            // Batasan Banyaknya hasil per halaman
+            // perPage,
+            // range data yang sedang ditampilkan
+            // range,
+            // Banyaknya Invoices yang terdaftar
+            // allOrders: ordersAll[0].total,
+            // Banyak Order Minggu ini
+            // thisWeekOrders: ordersThisWeek[0].total,
+            // Banyak Order Minggu kemarin
+            // lastWeekOrders: ordersLastweek[0].total,
+            // Order Gain Lastweek
+            // gainOrders:
+            //   ((ordersThisWeek[0].total - ordersLastweek[0].total) /
+            //     ordersLastweek[0].total) *
+            //   100,
+            // Banyaknya Orders Yang Sesuai
+            // totalData: total[0].total,
+            // Jumlah Halaman
+            // totalPage: Math.ceil(total[0].total / perPage),
+            // Jumlah Total Pemasukan
+            // totalIncome: Number(allIncome[0].totalIncome),
+            // Jumlah Pemasukan Hari Ini
+            // todaysIncome: Number(tdyIncome[0].totalIncome),
+            // Jumlah Pemasukan Kemarin
+            // YesterdayIncome: Number(incomeYesterday[0].yesterdayIncome),
+            // Kenaikan Penjualan
+            // gainIncome: (
+            //   ((tdyIncome[0].totalIncome -
+            //     incomeYesterday[0].yesterdayIncome) /
+            //     incomeYesterday[0].yesterdayIncome) *
+            //   100
+            // ).toFixed(2),
+            // };
             // Kalau hasilnya bukan array kosong
-            helper.printPaginateDetai(
+            // helper.printPaginateDetail(
+            //   res,
+            //   200,
+            //   "Display All Order Success",
+            //   pagination,
+            //   response
+            // );
+            totalData = total[0].total;
+            // Jumlah Halaman
+            totalPage = Math.ceil(total[0].total / perPage);
+
+            helper.printPaginate(
               res,
               200,
               "Display All Order Success",
-              pagination,
-              response
+              totalData,
+              totalPage,
+              response,
+              page,
+              perPage
             );
           } else {
             // Kalau hasilnya array kosong

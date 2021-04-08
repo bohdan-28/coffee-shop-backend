@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const productsModel = require("../models/productsModel");
 const helper = require("../helpers/printHelper");
+const { isUndefined } = require("util");
 
 const removeImage = (filePath) => {
   filePath = path.join(__dirname, "../..", filePath);
@@ -67,55 +68,69 @@ module.exports = {
       image = req.file.path;
     }
 
-    const { name, price, stock, category, description, size } = req.body;
-
-    const data = {
+    const {
       name,
       price,
-      image,
-      stock,
-      category,
       description,
       size,
-    };
-
-    productsModel
-      .createProduct(data)
-      .then((result) => {
-        if (result.affectedRows === 0) {
-          helper.printError(res, 400, "Error creating products");
-          return;
-        }
-        {
-          helper.printSuccess(res, 200, "Create product successfully", result);
-        }
-      })
-      .catch((err) => {
-        helper.printError(res, 500, err.message);
-      });
+      deliveryMethod,
+      stock,
+      categoryID,
+    } = req.body;
+    if (
+      name &&
+      price &&
+      description &&
+      size &&
+      deliveryMethod &&
+      stock &&
+      categoryID &&
+      !isUndefined(req.file)
+    ) {
+      const data = {
+        name,
+        price,
+        image,
+        description,
+        size,
+        deliveryMethod,
+        stock,
+        categoryID,
+        hourStart: req.body.hourStart ? `'${req.body.hourStart}'` : null,
+        hourEnd: req.body.hourEnd ? `'${req.body.hourEnd}'` : null,
+      };
+      console.log(req.body.hourStart ? `'${req.body.hourStart}'` : null);
+      productsModel
+        .createProduct(data)
+        .then((result) => {
+          if (result.affectedRows === 0) {
+            helper.printError(res, 400, "Error creating products");
+            return;
+          }
+          {
+            helper.printSuccess(
+              res,
+              200,
+              "Create product successfully",
+              result
+            );
+          }
+        })
+        .catch((err) => {
+          helper.printError(res, 500, err.message);
+        });
+    } else {
+      helper.printError(res, 400, "Content cannot be empty");
+      removeImage(req.file.path);
+    }
   },
 
   update: (req, res) => {
     const id = req.params.id;
     const checkId = /^[0-9]+$/;
-
-    const { name, price, stock, category, description, size } = req.body;
-
-    if (!name || !price || !stock || !category || !description || !size) {
-      helper.printError(res, 400, "Content cannot be empty");
-      return;
-    } else if (id.match(checkId) == null) {
-      helper.printError(res, 400, "Provide a valid id!");
-      return;
-    }
-
-    const data = {
-      name,
-      price,
-      stock,
-      category,
-      description,
-      size,
+    data = req.body;
+    data = {
+      ...data,
       updated_at: new Date(),
     };
 

@@ -20,7 +20,7 @@ exports.printPaginate = (
 };
 
 // Kalau Tidak ada Error
-(exports.printPaginateDetai = (res, rescode, message, pagination, arr) => {
+(exports.printPaginateDetail = (res, rescode, message, pagination, arr) => {
   res.json({
     code: rescode,
     msg: message,
