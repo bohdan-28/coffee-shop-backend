@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Apr 2021 pada 21.11
+-- Waktu pembuatan: 08 Apr 2021 pada 22.50
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.5
 
@@ -72,12 +72,24 @@ CREATE TABLE `order_body` (
   `productName` varchar(50) NOT NULL,
   `productImage` varchar(50) NOT NULL DEFAULT 'images\\default_products.jpg',
   `size` varchar(15) NOT NULL,
-  `ammount` int(10) NOT NULL,
+  `amount` int(10) NOT NULL,
   `price` int(10) NOT NULL,
   `isPending` tinyint(1) NOT NULL DEFAULT 1,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `order_body`
+--
+
+INSERT INTO `order_body` (`id`, `inv`, `userID`, `userName`, `productName`, `productImage`, `size`, `amount`, `price`, `isPending`, `created_at`, `updated_at`) VALUES
+(13, 102071, 1, 'Herza', 'Kopi Ko', 'kopiko.png', 'R', 1, 70000, 0, '2021-04-08 14:34:01', '2021-04-08 02:56:34'),
+(14, 102071, 1, 'Herza', 'Nasi Uduk', 'nasiuduk.png', 'XL', 2, 70000, 0, '2021-04-08 14:34:01', '2021-04-08 02:56:34'),
+(17, 102073, 1, 'Herza', 'Kopi Ko', 'kopiko.png', 'R', 1, 70000, 1, '2021-04-08 17:55:43', '2021-04-08 17:55:43'),
+(18, 102073, 1, 'Herza', 'Nasi Uduk', 'nasiuduk.png', 'XL', 2, 70000, 1, '2021-04-08 17:55:43', '2021-04-08 17:55:43'),
+(19, 102075, 3, 'Herzaa', 'Kopi Ko', 'kopiko.png', 'R', 1, 70000, 1, '2021-04-08 17:57:27', '2021-04-08 17:57:27'),
+(20, 102075, 3, 'Herzaa', 'Nasi Uduk', 'nasiuduk.png', 'XL', 2, 70000, 1, '2021-04-08 17:57:27', '2021-04-08 17:57:27');
 
 -- --------------------------------------------------------
 
@@ -86,7 +98,7 @@ CREATE TABLE `order_body` (
 --
 
 CREATE TABLE `order_head` (
-  `inv` int(10) NOT NULL,
+  `inv` int(11) NOT NULL,
   `cashierName` varchar(50) DEFAULT NULL,
   `userName` varchar(50) NOT NULL,
   `orderType` int(10) DEFAULT NULL,
@@ -98,6 +110,15 @@ CREATE TABLE `order_head` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `order_head`
+--
+
+INSERT INTO `order_head` (`inv`, `cashierName`, `userName`, `orderType`, `orderDetails`, `orderPhone`, `paymentType`, `isPending`, `total`, `created_at`, `updated_at`) VALUES
+(102071, 'Kevin', 'Herza', 0, 'Jalan Hartono2', 2147483647, 'OVO', 0, 210000, '2021-04-08 14:34:01', '2021-04-08 02:56:34'),
+(102073, NULL, 'Herza', 0, 'Jalan Hartono2', 2147483647, 'OVO', 1, 210000, '2021-04-08 17:55:43', '2021-04-08 17:55:43'),
+(102075, NULL, 'Herzaa', 0, 'Jalan Hartono2', 2147483647, 'OVO', 1, 210000, '2021-04-08 17:57:27', '2021-04-08 17:57:27');
 
 -- --------------------------------------------------------
 
@@ -111,6 +132,7 @@ CREATE TABLE `products` (
   `price` int(10) DEFAULT NULL,
   `image` varchar(255) NOT NULL DEFAULT 'images\\default_products.jpg',
   `stock` int(10) DEFAULT NULL,
+  `totalSale` int(10) NOT NULL DEFAULT 0,
   `categoryID` int(10) DEFAULT NULL,
   `description` text DEFAULT NULL,
   `size` varchar(25) DEFAULT NULL,
@@ -118,17 +140,18 @@ CREATE TABLE `products` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
   `deliveryMethod` varchar(50) NOT NULL,
   `isFavorit` tinyint(1) NOT NULL DEFAULT 0,
-  `hourStart` time NOT NULL,
-  `hourEnd` time NOT NULL
+  `hourStart` time DEFAULT NULL,
+  `hourEnd` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `price`, `image`, `stock`, `categoryID`, `description`, `size`, `created_at`, `updated_at`, `deliveryMethod`, `isFavorit`, `hourStart`, `hourEnd`) VALUES
-(3, 'Tahu Geprek', 30000, 'images\\1617740731728-220px-A_Quiet_Place_Part_II.jpg', 120, 3, 'Tahu geprek top 1 indo', 'R', '2021-04-06 23:27:28', '2021-04-07 03:26:29', '', 0, '00:00:00', '00:00:00'),
-(4, 'Martabak Manis', 30000, 'images\\1617740660955-220px-A_Quiet_Place_Part_II.jpg', 120, 3, 'Martbak yang rasanya manis', 'R', '2021-04-06 23:27:28', '2021-04-07 03:24:20', '', 0, '00:00:00', '00:00:00');
+INSERT INTO `products` (`id`, `name`, `price`, `image`, `stock`, `totalSale`, `categoryID`, `description`, `size`, `created_at`, `updated_at`, `deliveryMethod`, `isFavorit`, `hourStart`, `hourEnd`) VALUES
+(3, 'Tahu SUmedang', 20000, 'images\\1617740731728-220px-A_Quiet_Place_Part_II.jpg', 120, 50, 3, 'Tahu geprek top 1 indo', 'R', '2021-04-06 23:27:28', '2021-04-09 03:45:20', '', 0, '00:00:00', '00:00:00'),
+(4, 'Martabak Manis', 30000, 'images\\1617740660955-220px-A_Quiet_Place_Part_II.jpg', 120, 0, 3, 'Martbak yang rasanya manis', 'R', '2021-04-06 23:27:28', '2021-04-07 03:24:20', '', 0, '00:00:00', '00:00:00'),
+(16, 'Coffee Lamping', 10000, 'images1617914243721-220px-The_Courier_poster.jpg', 500, 0, 1, 'Makanan tradisional murah meriah dan lezat', 's', '2021-04-09 03:37:23', '2021-04-09 03:37:23', 'dine', 0, '12:00:00', '17:00:00');
 
 -- --------------------------------------------------------
 
@@ -187,6 +210,12 @@ ALTER TABLE `order_body`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `order_head`
+--
+ALTER TABLE `order_head`
+  ADD PRIMARY KEY (`inv`);
+
+--
 -- Indeks untuk tabel `products`
 --
 ALTER TABLE `products`
@@ -224,13 +253,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT untuk tabel `order_body`
 --
 ALTER TABLE `order_body`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT untuk tabel `order_head`
+--
+ALTER TABLE `order_head`
+  MODIFY `inv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102076;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
@@ -243,16 +278,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `user_token`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
---
-
---
--- Ketidakleluasaan untuk tabel `products`
---
-ALTER TABLE `products`
-  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`id`) REFERENCES `categories` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
