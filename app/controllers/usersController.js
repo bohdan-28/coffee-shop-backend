@@ -257,6 +257,37 @@ exports.update = async (req, res) => {
     });
 };
 
+exports.updatePassword = async (req, res) => {
+  const id = req.params.id;
+
+  const validate = validation.validationUsersUpdatePassword(req.body);
+
+  if (validate.error) {
+    helper.printError(res, 400, validate.error.details[0].message);
+    return;
+  }
+
+  const { password } = req.body;
+
+  const data = await hash.hashPassword(password);
+
+  usersModel
+    .findUser(id, "update password")
+    .then((result) => {
+      return usersModel.updatePassword(id, data);
+    })
+    .then((result) => {
+      delete result[0].password;
+      helper.printSuccess(res, 200, "Password has been updated", result);
+    })
+    .catch((err) => {
+      if (err.message === "Internal server error") {
+        helper.printError(res, 500, err.message);
+      }
+      helper.printError(res, 400, err.message);
+    });
+};
+
 exports.delete = (req, res) => {
   const id = req.params.id;
 

@@ -113,6 +113,32 @@ exports.updateUsers = (id, data) => {
   });
 };
 
+exports.updatePassword = (id, data) => {
+  return new Promise((resolve, reject) => {
+    connection.query(
+      "UPDATE users SET password = ? WHERE id = ?",
+      [data, id],
+      (err, result) => {
+        if (!err) {
+          connection.query(
+            "SELECT * FROM users WHERE id = ?",
+            id,
+            (err, result) => {
+              if (!err) {
+                resolve(result);
+              } else {
+                reject(new Error("Internal server error"));
+              }
+            }
+          );
+        } else {
+          reject(new Error("Internal server error"));
+        }
+      }
+    );
+  });
+};
+
 exports.deleteUsers = (id) => {
   return new Promise((resolve, reject) => {
     connection.query("DELETE FROM users WHERE id = ?", id, (err, result) => {
