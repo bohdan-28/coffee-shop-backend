@@ -127,7 +127,7 @@ module.exports = {
 
   update: (req, res) => {
     const id = req.params.id;
-    const checkId = /^[0-9]+$/;
+    // const checkId = /^[0-9]+$/;
     data = req.body;
     data = {
       ...data,

@@ -7,8 +7,24 @@ const productsController = require("../controllers/productsController");
 router
   .get("/", productsController.findAll)
   .get("/:id", productsController.findOne)
-  .post("/", multer.uploadImage.single("image"), productsController.create)
-  .put("/:id", multer.uploadImage.single("image"), productsController.update)
-  .delete("/:id", productsController.delete);
+  .post(
+    "/",
+    auth.verification(),
+    auth.isAdmin(),
+    multer.uploadImage.single("image"),
+    productsController.create
+  )
+  .put(
+    "/:id",
+    auth.verification(),
+    multer.uploadImage.single("image"),
+    productsController.update
+  )
+  .delete(
+    "/:id",
+    auth.verification(),
+    auth.isAdmin(),
+    productsController.delete
+  );
 
 module.exports = router;
