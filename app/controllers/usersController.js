@@ -200,6 +200,13 @@ exports.verify = async (req, res) => {
 exports.update = async (req, res) => {
   const id = req.params.id;
 
+  const validate = validation.validationUsersUpdate(req.body);
+
+  if (validate.error) {
+    helper.printError(res, 400, validate.error.details[0].message);
+    return;
+  }
+
   const {
     email,
     phoneNumber,
