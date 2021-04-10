@@ -41,7 +41,7 @@ module.exports = {
 
   findOne: (req, res) => {
     const id = req.params.id;
-    console.log(id);
+
     productsModel
       .getProductsById(id)
       .then((result) => {
@@ -62,6 +62,7 @@ module.exports = {
 
   create: async (req, res) => {
     let image;
+
     if (!req.file) {
       image = "images\\default_products.jpg";
     } else {
@@ -99,7 +100,6 @@ module.exports = {
         hourStart: req.body.hourStart ? `'${req.body.hourStart}'` : null,
         hourEnd: req.body.hourEnd ? `'${req.body.hourEnd}'` : null,
       };
-      console.log(req.body.hourStart ? `'${req.body.hourStart}'` : null);
       productsModel
         .createProduct(data)
         .then((result) => {

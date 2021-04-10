@@ -10,7 +10,6 @@ module.exports = {
         (err, result) => {
           let totalData, page, perPage, totalPage;
           if (err) {
-            console.log(err);
             reject(new Error("Internal server error"));
           } else {
             totalData = result[0].totalData;
@@ -25,7 +24,6 @@ module.exports = {
             [`%${keyword}%`, `%${keyword}%`, firstData, perPage],
             (err, result) => {
               if (err) {
-                console.log(err);
                 reject(new Error("Internal server error"));
               } else {
                 resolve([totalData, totalPage, result, page, perPage]);
@@ -57,7 +55,8 @@ module.exports = {
   createProduct: (data) => {
     return new Promise((resolve, reject) => {
       connection.query(
-        `INSERT INTO products (name, image, price, description, size, deliveryMethod, stock, categoryID, hourStart, hourEnd) VALUES ('${data.name}', '${data.image}', '${data.price}', '${data.description}', '${data.size}', '${data.deliveryMethod}', '${data.stock}', '${data.categoryID}', ${data.hourStart}, ${data.hourEnd})`,
+        `INSERT INTO products set ?`,
+        data,
 
         (err, result) => {
           if (!err) {
@@ -65,17 +64,14 @@ module.exports = {
               "SELECT * FROM products WHERE id = ?",
               result.insertId,
               (err, result) => {
-                console.log(result);
                 if (!err) {
                   resolve(result);
                 } else {
-                  console.log(err);
                   reject(new Error("Internal server error"));
                 }
               }
             );
           } else {
-            console.log(err);
             reject(new Error("Internal server error"));
           }
         }
