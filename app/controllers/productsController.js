@@ -39,6 +39,35 @@ module.exports = {
       });
   },
 
+  findAllFavourite: (req, res) => {
+    const { page, perPage } = req.query;
+    const keyword = req.query.keyword ? req.query.keyword : "";
+    const sortBy = req.query.sortBy ? req.query.sortBy : "id";
+    const order = req.query.order ? req.query.order : "ASC";
+
+    productsModel
+      .getAllProductsFavourite(page, perPage, keyword, sortBy, order)
+      .then(([totalData, totalPage, result, page, perPage]) => {
+        if (result < 1) {
+          helper.printError(res, 400, "Products favourite not found");
+          return;
+        }
+        helper.printPaginate(
+          res,
+          200,
+          "Find all products favourite successfully",
+          totalData,
+          totalPage,
+          result,
+          page,
+          perPage
+        );
+      })
+      .catch((err) => {
+        helper.printError(res, 500, err.message);
+      });
+  },
+
   findOne: (req, res) => {
     const id = req.params.id;
 

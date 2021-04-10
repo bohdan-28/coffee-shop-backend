@@ -6,6 +6,7 @@ const productsController = require("../controllers/productsController");
 
 router
   .get("/", productsController.findAll)
+  .get("/favourite", productsController.findAllFavourite)
   .get("/:id", productsController.findOne)
   .post(
     "/",
