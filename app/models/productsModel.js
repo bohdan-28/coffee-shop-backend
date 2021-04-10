@@ -1,12 +1,11 @@
 const connection = require("../configs/dbConfig");
 
-// Export setiap model products
 module.exports = {
   getAllProducts: (queryPage, queryPerPage, keyword, sortBy, order) => {
     return new Promise((resolve, reject) => {
       connection.query(
-        "SELECT COUNT(*) AS totalData FROM products LEFT JOIN categories ON products.categoryID = categories.id WHERE products.name LIKE ? OR categories.name LIKE ?",
-        [`%${keyword}%`, `%${keyword}%`],
+        "SELECT COUNT(*) AS totalData FROM products LEFT JOIN categories ON products.categoryID = categories.id WHERE products.name LIKE ? OR categories.name = ?",
+        [`%${keyword}%`, keyword],
         (err, result) => {
           let totalData, page, perPage, totalPage;
           if (err) {
@@ -21,8 +20,42 @@ module.exports = {
           const firstData = perPage * page - perPage;
           connection.query(
             `SELECT products.id, products.name as name, categories.name as category, products.price, products.image, products.description, products.size, products.deliveryMethod, 
-            products.stock, products.totalSale, products.categoryID, products.hourStart, products.hourEnd, products.created_at FROM products LEFT JOIN categories ON products.categoryID = categories.id  WHERE products.name LIKE ? OR categories.name LIKE ? ORDER BY ${sortBy} ${order} LIMIT ?, ?`,
-            [`%${keyword}%`, `%${keyword}%`, firstData, perPage],
+            products.stock, products.totalSale, products.categoryID, products.hourStart, products.hourEnd, products.created_at FROM products LEFT JOIN categories ON products.categoryID = categories.id WHERE products.name LIKE ? OR categories.name = ? ORDER BY ${sortBy} ${order} LIMIT ?, ?`,
+            [`%${keyword}%`, keyword, firstData, perPage],
+            (err, result) => {
+              if (err) {
+                console.log(err);
+                reject(new Error("Internal server error"));
+              } else {
+                resolve([totalData, totalPage, result, page, perPage]);
+              }
+            }
+          );
+        }
+      );
+    });
+  },
+
+  getAllProductsFavourite: (queryPage, queryPerPage, sortBy, order) => {
+    return new Promise((resolve, reject) => {
+      connection.query(
+        "SELECT COUNT(*) AS totalData FROM products LEFT JOIN categories ON products.categoryID = categories.id WHERE products.isFavorit = true",
+        (err, result) => {
+          let totalData, page, perPage, totalPage;
+          if (err) {
+            console.log(err);
+            reject(new Error("Internal server error"));
+          } else {
+            totalData = result[0].totalData;
+            page = queryPage ? parseInt(queryPage) : 1;
+            perPage = queryPerPage ? parseInt(queryPerPage) : 5;
+            totalPage = Math.ceil(totalData / perPage);
+          }
+          const firstData = perPage * page - perPage;
+          connection.query(
+            `SELECT products.id, products.name as name, categories.name as category, products.price, products.image, products.description, products.size, products.deliveryMethod, 
+            products.stock, products.totalSale, products.categoryID, products.hourStart, products.hourEnd, products.created_at FROM products LEFT JOIN categories ON products.categoryID = categories.id WHERE products.isFavorit = true ORDER BY ${sortBy} ${order} LIMIT ?, ?`,
+            [firstData, perPage],
             (err, result) => {
               if (err) {
                 console.log(err);
