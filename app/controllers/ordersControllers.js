@@ -127,6 +127,7 @@ module.exports = {
   },
 
   readAll: async (req, res) => {
+    console.log(req.auth)
     try {
       // Ambil Query dari URL
       const perPage = req.query.perPage ? req.query.perPage : "5";

@@ -44,9 +44,9 @@ module.exports = {
     const keyword = req.query.keyword ? req.query.keyword : "";
     const sortBy = req.query.sortBy ? req.query.sortBy : "id";
     const order = req.query.order ? req.query.order : "ASC";
-
+    console.log(sortBy, order);
     productsModel
-      .getAllProductsFavourite(page, perPage, keyword, sortBy, order)
+      .getAllProductsFavourite(page, perPage, sortBy, order)
       .then(([totalData, totalPage, result, page, perPage]) => {
         if (result < 1) {
           helper.printError(res, 400, "Products favourite not found");
@@ -70,7 +70,7 @@ module.exports = {
 
   findOne: (req, res) => {
     const id = req.params.id;
-    console.log(id);
+
     productsModel
       .getProductsById(id)
       .then((result) => {
@@ -91,6 +91,7 @@ module.exports = {
 
   create: async (req, res) => {
     let image;
+
     if (!req.file) {
       image = "images\\default_products.jpg";
     } else {
@@ -128,7 +129,6 @@ module.exports = {
         hourStart: req.body.hourStart ? `'${req.body.hourStart}'` : null,
         hourEnd: req.body.hourEnd ? `'${req.body.hourEnd}'` : null,
       };
-      console.log(req.body.hourStart ? `'${req.body.hourStart}'` : null);
       productsModel
         .createProduct(data)
         .then((result) => {
