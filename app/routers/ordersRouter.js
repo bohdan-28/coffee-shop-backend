@@ -8,6 +8,8 @@ router
   .get("/:inv", auth.verification(), ordersController.readDetail)
   .get("/history/byid", auth.verification(), ordersController.getHistory)
   .post("/", auth.verification(), ordersController.create)
+  .post("/cart", auth.verification(), ordersController.createCart)
+  .get("/cart/user/:user", auth.verification(), ordersController.findCart)
   .put("/:inv", auth.verification(), ordersController.updateOrders)
   .delete("/:inv", auth.verification(), ordersController.delete)
   .delete("/history/byid/:id", auth.verification(), ordersController.deleteHisto);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Apr 2021 pada 19.24
+-- Waktu pembuatan: 11 Apr 2021 pada 16.35
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 8.0.1
 
@@ -39,7 +39,30 @@ CREATE TABLE `access_token` (
 --
 
 INSERT INTO `access_token` (`id`, `idUser`, `accessToken`, `ipAddress`) VALUES
-(1, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6InlvdXIgdXNlcm5hbWUiLCJmaXJzdG5hbWUiOiJ5b3VyIGZpcnN0bmFtZSIsImxhc3RuYW1lIjoieW91ciBsYXN0bmFtZSIsImFkZHJlc3MiOiJ5b3VyIGFkZHJlc3MiLCJnZW5kZXIiOiJtYWxlIiwiZGF0ZU9mQmlydGgiOiIyMDIxLTA0LTA5VDE3OjAwOjAwLjAwMFoiLCJyb2xlIjoyLCJpYXQiOjE2MTgwNDQ1MDIsImV4cCI6MTYxODEzMDkwMn0.71TkvPKM_5Rtil6W1giNWTzq_tnfVKgXcjmxvOxRpJQ', '192.168.43.107');
+(1, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6InlvdXIgdXNlcm5hbWUiLCJmaXJzdG5hbWUiOiJ5b3VyIGZpcnN0bmFtZSIsImxhc3RuYW1lIjoieW91ciBsYXN0bmFtZSIsImFkZHJlc3MiOiJ5b3VyIGFkZHJlc3MiLCJnZW5kZXIiOiJtYWxlIiwiZGF0ZU9mQmlydGgiOiIyMDIxLTA0LTA5VDE3OjAwOjAwLjAwMFoiLCJyb2xlIjoyLCJpYXQiOjE2MTgwNDQ1MDIsImV4cCI6MTYxODEzMDkwMn0.71TkvPKM_5Rtil6W1giNWTzq_tnfVKgXcjmxvOxRpJQ', '192.168.43.107'),
+(2, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6InlvdXIgdXNlcm5hbWUiLCJmaXJzdG5hbWUiOiJ5b3VyIGZpcnN0bmFtZSIsImxhc3RuYW1lIjoieW91ciBsYXN0bmFtZSIsImFkZHJlc3MiOiJ5b3VyIGFkZHJlc3MiLCJnZW5kZXIiOiJtYWxlIiwiZGF0ZU9mQmlydGgiOiIyMDIxLTA0LTA4VDE3OjAwOjAwLjAwMFoiLCJyb2xlIjoyLCJpYXQiOjE2MTgxMTk1NjcsImV4cCI6MTYxODIwNTk2N30.N50H2h6chGvoERz_eB8f6Iz_Uo7YMtaaEDNdeI1NUEk', '192.168.43.107'),
+(3, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6InlvdXIgdXNlcm5hbWUiLCJmaXJzdG5hbWUiOiJ5b3VyIGZpcnN0bmFtZSIsImxhc3RuYW1lIjoieW91ciBsYXN0bmFtZSIsImFkZHJlc3MiOiJ5b3VyIGFkZHJlc3MiLCJnZW5kZXIiOiJtYWxlIiwiZGF0ZU9mQmlydGgiOiIyMDIxLTA0LTA4VDE3OjAwOjAwLjAwMFoiLCJyb2xlIjoyLCJpYXQiOjE2MTgxMzE1NjksImV4cCI6MTYxODIxNzk2OX0.yNDILfFCTiFqWkw4kxh5F2-tf30vuzKjsOaEWVN-Qd0', '192.168.43.107'),
+(4, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDhUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjIsImlhdCI6MTYxODE0OTAwNCwiZXhwIjoxNjE4MjM1NDA0fQ.eYguYnFHMBgVUs3W8mtDJ4-kiLItG1Az0ka9q-GAJQs', '192.168.43.107'),
+(5, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDhUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjIsImlhdCI6MTYxODE0OTgxMiwiZXhwIjoxNjE4MjM2MjEyfQ.80Pt5wjAZC_zu-2t5aWm9lv_5wzHZMUgrLEbqe1RoWw', '192.168.43.107');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL,
+  `userName` varchar(50) NOT NULL,
+  `orderType` varchar(100) NOT NULL,
+  `orderDetails` varchar(255) NOT NULL,
+  `orderPhone` varchar(15) NOT NULL,
+  `productName` varchar(50) NOT NULL,
+  `productImage` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL,
+  `size` varchar(50) NOT NULL,
+  `amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -72,19 +95,27 @@ INSERT INTO `categories` (`id`, `name`, `isReady`, `created_at`, `updated_at`) V
 --
 
 CREATE TABLE `order_body` (
-  `id` int(10) NOT NULL,
-  `inv` int(15) NOT NULL,
-  `userID` int(10) NOT NULL,
+  `id` int(11) NOT NULL,
+  `inv` varchar(15) NOT NULL,
+  `userID` int(11) NOT NULL,
   `userName` varchar(50) NOT NULL,
   `productName` varchar(50) NOT NULL,
-  `productImage` varchar(50) NOT NULL DEFAULT 'images\\default_products.jpg',
+  `productImage` varchar(255) NOT NULL DEFAULT 'images\\default_products.jpg',
   `size` varchar(15) NOT NULL,
-  `amount` int(10) NOT NULL,
-  `price` int(10) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
   `isPending` tinyint(1) NOT NULL DEFAULT 1,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `order_body`
+--
+
+INSERT INTO `order_body` (`id`, `inv`, `userID`, `userName`, `productName`, `productImage`, `size`, `amount`, `price`, `isPending`, `created_at`, `updated_at`) VALUES
+(37, '1618150842380', 1, 'chaerulmarwan20', 'Nasi Goreng', 'images\\nasgor.jpg', 'R', 2, 15000, 1, '2021-04-11 21:20:42', '2021-04-11 21:20:42'),
+(38, '1618150842380', 1, 'chaerulmarwan20', 'Nasi Goreng', 'images\\nasgor.jpg', 'L', 1, 15000, 1, '2021-04-11 21:20:42', '2021-04-11 21:20:42');
 
 -- --------------------------------------------------------
 
@@ -93,18 +124,25 @@ CREATE TABLE `order_body` (
 --
 
 CREATE TABLE `order_head` (
-  `inv` int(15) NOT NULL,
+  `inv` varchar(15) NOT NULL,
   `cashierName` varchar(50) DEFAULT NULL,
   `userName` varchar(50) NOT NULL,
-  `orderType` int(10) DEFAULT NULL,
-  `orderDetails` text DEFAULT NULL,
-  `orderPhone` int(15) NOT NULL,
+  `orderType` varchar(100) DEFAULT NULL,
+  `orderDetails` varchar(255) DEFAULT NULL,
+  `orderPhone` varchar(15) NOT NULL,
   `paymentType` varchar(25) NOT NULL,
   `isPending` tinyint(1) NOT NULL DEFAULT 1,
   `total` int(12) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `order_head`
+--
+
+INSERT INTO `order_head` (`inv`, `cashierName`, `userName`, `orderType`, `orderDetails`, `orderPhone`, `paymentType`, `isPending`, `total`, `created_at`, `updated_at`) VALUES
+('1618150842380', 'Admin', 'chaerulmarwan20', 'Pick Up', '21:16', '081224685502', 'Bank Account', 1, 75000, '2021-04-11 21:20:42', '2021-04-11 21:20:42');
 
 -- --------------------------------------------------------
 
@@ -140,7 +178,7 @@ INSERT INTO `products` (`id`, `name`, `price`, `image`, `stock`, `totalSale`, `c
 (19, 'Creamy Ice Latte', 20000, 'images\\creamy-ice.jpg', 100, 0, 1, 'Nothing better than a cold iced coffee in the summer time heat. Tall glasses filled with a cold creamy coffee.', 'R L XL', '2021-04-10 15:31:44', '2021-04-10 15:31:44', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
 (20, 'Coffee Beer', 10000, 'images\\beer.jpg', 100, 0, 1, 'Coffee beer sendiri merupakan minuman soda kopi dan tidak mengandung alkohol.', 'R L XL', '2021-04-10 15:33:41', '2021-04-10 15:33:41', 'Dine In Door Delivery Pick Up', 0, '10:00:00', '18:00:00'),
 (21, 'Ramen', 30000, 'images\\ramen.jpg', 100, 0, 3, 'Ramen adalah masakan mi kuah Jepang yang berasal dari China.', 'R L XL', '2021-04-10 15:36:41', '2021-04-10 15:36:41', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
-(22, 'Nasi Goreng', 15000, 'images\\nasgor.jpg', 100, 0, 3, 'Nasi goreng adalah sebuah makanan berupa nasi yang digoreng dan diaduk dalam minyak goreng, margarin, atau mentega', 'R L XL', '2021-04-10 15:37:39', '2021-04-10 15:37:39', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
+(22, 'Nasi Goreng', 15000, 'images\\nasgor.jpg', 94, 6, 3, 'Nasi goreng adalah sebuah makanan berupa nasi yang digoreng dan diaduk dalam minyak goreng, margarin, atau mentega', 'R L XL', '2021-04-10 15:37:39', '2021-04-10 15:37:39', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
 (23, 'Ayam Goreng', 30000, 'images\\ayam.jpg', 100, 0, 3, 'Ayam goreng adalah hidangan yang dibuat dari daging ayam dicampur tepung bumbu yang digoreng dalam minyak goreng panas.', 'R L XL', '2021-04-10 15:38:26', '2021-04-10 15:38:26', 'Dine In Door Delivery Pick Up', 0, '10:00:00', '18:00:00'),
 (24, 'Ikan Bakar', 35000, 'images\\ikan.jpg', 100, 0, 3, 'Ikan bakar adalah hidangan ikan yang dibakar atau dipanggang di atas api atau bara api.', 'R L XL', '2021-04-10 15:39:33', '2021-04-10 15:39:33', 'Dine In Door Delivery Pick Up', 0, '10:00:00', '18:00:00'),
 (25, 'Thai Tea', 20000, 'images\\thai.jpg', 100, 0, 2, 'Teh Thailand biasanya dikenal sebagai minuman Thailand yang terbuat dari teh Ceylon, susu dan gula, serta disajikan panas atau dingin.', 'R L XL', '2021-04-10 15:40:12', '2021-04-10 15:40:12', 'Dine In Door Delivery Pick Up', 0, '10:00:00', '18:00:00'),
@@ -175,7 +213,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `phoneNumber`, `username`, `firstname`, `lastname`, `address`, `gender`, `dateOfBirth`, `role`, `active`, `image`) VALUES
-(1, 'chaerulmarwan20@gmail.com', '$2b$10$K9cfwH7j.0dIgaYDwwe/HuvSdrQ5tZ2ftNpyB3Vq6BfmeIWYH19xO', '081224685502', 'your username', 'your firstname', 'your lastname', 'your address', 'male', '2021-04-09', 2, 1, 'images\\avatar.png');
+(1, 'chaerulmarwan20@gmail.com', '$2b$10$K9cfwH7j.0dIgaYDwwe/HuvSdrQ5tZ2ftNpyB3Vq6BfmeIWYH19xO', '081224685502', 'chaerulmarwan20', 'your firstname', 'your lastname', 'your address', 'male', '2021-04-09', 2, 1, 'images\\avatar.png');
 
 -- --------------------------------------------------------
 
@@ -199,6 +237,12 @@ CREATE TABLE `user_token` (
 ALTER TABLE `access_token`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idUser` (`idUser`);
+
+--
+-- Indeks untuk tabel `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `categories`
@@ -247,7 +291,13 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT untuk tabel `access_token`
 --
 ALTER TABLE `access_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT untuk tabel `categories`
@@ -259,7 +309,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT untuk tabel `order_body`
 --
 ALTER TABLE `order_body`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`

@@ -3,25 +3,85 @@ const connection = require("../configs/dbConfig");
 
 //Export setiap model orders
 module.exports = {
+  // menambah head order
+  createHeadOrder: (data) => {
+    return new Promise((resolve, reject) => {
+      connection.query("INSERT INTO order_head SET ?", data, (err, result) => {
+        if (!err) {
+          resolve(data);
+        } else {
+          reject(new Error("Internal server error"));
+        }
+      });
+    });
+  },
+
   //menambah body order baru
   createBodyOrder: (data) => {
     return new Promise((resolve, reject) => {
-      let sql = data.map(
-        (item) =>
-          `('${item.inv}', '${item.userID}', '${item.userName}', '${item.productName}', '${item.productImage}', '${item.size}', ${item.amount}, ${item.price})`
-      );
+      connection.query("INSERT INTO order_body SET ?", data, (err, result) => {
+        if (!err) {
+          resolve(data);
+        } else {
+          reject(new Error("Internal server error"));
+        }
+      });
+    });
+  },
 
+  updateStock: (stock, id) => {
+    return new Promise((resolve, reject) => {
       connection.query(
-        `INSERT INTO order_body (inv, userID, userName, productName, productImage, size, amount, price) VALUES ${sql}`,
-        (error, result) => {
-          if (error) {
-            console.log("ini dari body order", error.message);
-            reject(new Error(error));
-          } else {
+        "UPDATE products SET stock = stock - ? WHERE id = ?",
+        [stock, id],
+        (err, result) => {
+          if (!err) {
             resolve(result);
+          } else {
+            reject(new Error("Internal srver error stock"));
           }
         }
       );
+    });
+  },
+
+  updateTotalSale: (stock, id) => {
+    return new Promise((resolve, reject) => {
+      connection.query(
+        "UPDATE products SET totalSale = totalSale + ? WHERE id = ?",
+        [stock, id],
+        (err, result) => {
+          if (!err) {
+            resolve(result);
+          } else {
+            reject(new Error("Internal srver error stock"));
+          }
+        }
+      );
+    });
+  },
+
+  createCart: (data) => {
+    return new Promise((resolve, reject) => {
+      connection.query("INSERT INTO cart SET ?", data, (err, result) => {
+        if (!err) {
+          resolve(data);
+        } else {
+          reject(new Error("Internal server error"));
+        }
+      });
+    });
+  },
+
+  deleteCart: (id) => {
+    return new Promise((resolve, reject) => {
+      connection.query("DELETE FROM cart WHERE id = ?", id, (err, result) => {
+        if (!err) {
+          resolve(result);
+        } else {
+          reject(new Error("Internal server error"));
+        }
+      });
     });
   },
 
@@ -47,25 +107,6 @@ module.exports = {
           resolve(result);
         }
       });
-    });
-  },
-
-  // menambah head order
-  createHeadOrder: (data) => {
-    return new Promise((resolve, reject) => {
-      connection.query(
-        `INSERT INTO order_head (inv, userName, orderType, orderDetails, orderPhone, paymentType, total)
-      VALUE (${data.inv}, '${data.userName}', '${data.orderType}', '${data.orderDetails}', '${data.orderPhone}', '${data.paymentType}', ${data.total})`,
-        (error, result) => {
-          if (error) {
-            console.log("ini dari head order", error.message);
-            reject(new Error(error));
-          } else {
-            console.log(result);
-            resolve(result);
-          }
-        }
-      );
     });
   },
 
@@ -273,6 +314,38 @@ module.exports = {
             reject(new Error(error));
           } else {
             resolve(result);
+          }
+        }
+      );
+    });
+  },
+
+  getUser: (idUser) => {
+    return new Promise((resolve, reject) => {
+      connection.query(
+        "SELECT users.id FROM users WHERE id = ?",
+        idUser,
+        (err, result) => {
+          if (!err) {
+            resolve(result);
+          } else {
+            reject(new Error("Internal server error"));
+          }
+        }
+      );
+    });
+  },
+
+  getCart: (user) => {
+    return new Promise((resolve, reject) => {
+      connection.query(
+        `SELECT * FROM cart WHERE userName = ?`,
+        `${user}`,
+        (err, result) => {
+          if (!err) {
+            resolve(result);
+          } else {
+            reject(new Error("Internal server error"));
           }
         }
       );
