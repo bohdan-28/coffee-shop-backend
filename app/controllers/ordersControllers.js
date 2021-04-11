@@ -8,74 +8,122 @@ const helper = require("../helpers/printHelper");
 
 // export setiap controllers order
 module.exports = {
-  create: (req, res) => {
+  create: async (req, res) => {
+    const arrOrders = req.body.arrOrders;
+    const arrCart = req.body.arrCart;
+    const idProduct = req.body.idProduct;
+    const idUser = req.body.idUser;
+    const userName = req.body.userName;
+    const orderType = req.body.orderType;
+    const orderDetails = req.body.orderDetails;
+    const orderPhone = req.body.orderPhone;
+    const paymentType = req.body.paymentType;
+    const total = req.body.total;
+    const qty = req.body.qty;
+    const productName = req.body.productName;
+    const productImage = req.body.productImage;
+    const price = req.body.price;
+
     try {
-      // Ambil data dari body
-      const data = req.body;
-      // Inisialisasi Checker
-      let dataChecker = false;
-      for (let i = 0; i < data.length; i++) {
-        if (
-          data[i].inv &&
-          data[i].userID &&
-          data[i].userName &&
-          data[i].productName &&
-          data[i].productImage &&
-          data[i].size &&
-          data[i].amount &&
-          data[i].price &&
-          data[i].orderType &&
-          data[i].orderDetails &&
-          data[i].orderPhone &&
-          data[i].paymentType
-        ) {
-          dataChecker = true;
-        } else {
-          dataChecker = false;
-          break;
-        }
-      }
-      if (dataChecker) {
-        let total = 0;
-        for (let i = 0; i < data.length; i++) {
-          total = total + data[i].price * data[i].amount;
-        }
-        const dataHead = {
-          inv: data[0].inv,
-          userName: data[0].userName,
-          orderType: data[0].orderType,
-          orderDetails: data[0].orderDetails,
-          orderPhone: data[0].orderPhone,
-          paymentType: data[0].paymentType,
-          total: total,
-        };
-        ordersModel
-          .createBodyOrder(data)
-          .then(async () => {
-            // Post Head Data
-            await ordersModel
-              .createHeadOrder(dataHead)
-              .then((result) => {
-                helper.printSuccess(res, 200, "Add New Order Success", result);
-              })
-              // Kalau berhasil menambahkan
-              .catch((err) => {
-                console.log(err.message);
-                helper.printError(res, 400, "Update Head error");
-              });
-          })
-          .catch((err) => {
-            // Kalau ada tipe data yang salah
-            helper.printError(res, 400, "Wrong Data Type Given");
-          });
-      } else {
-        // Kalau ada data yang kosong
-        helper.printError(res, 400, "Please Fill All Field");
+      const getUser = await ordersModel.getUser(idUser);
+      if (getUser < 1) {
+        helper.printError(res, 400, "Id user not found!");
+        return;
       }
     } catch (err) {
-      // Kalau ada salah lainnya
-      helper.printError(res, 500, "Internal Server Error");
+      helper.printError(res, 500, err.message);
     }
+    const invoice = new Date().getTime();
+    const data = {
+      inv: invoice,
+      cashierName: "Admin",
+      userName: userName,
+      orderType: orderType,
+      orderDetails: orderDetails,
+      orderPhone: orderPhone,
+      paymentType: paymentType,
+      isPending: true,
+      total: total,
+    };
+
+    ordersModel
+      .createHeadOrder(data)
+      .then(async (result) => {
+        if (result.affectedRows === 0) {
+          helper.printError(res, 400, "Error orders");
+          return;
+        }
+        await ordersModel.updateStock(qty, idProduct);
+        await ordersModel.updateTotalSale(qty, idProduct);
+        arrOrders.map((data, index) => {
+          const orderBody = {
+            inv: invoice,
+            userID: idUser,
+            userName: userName,
+            productName: productName,
+            productImage: productImage,
+            size: data.size,
+            amount: data.amount,
+            price: price,
+            isPending: true,
+          };
+          ordersModel.createBodyOrder(orderBody);
+        });
+        arrCart.forEach((data, index) => {
+          ordersModel.deleteCart(data);
+        });
+        helper.printSuccess(res, 200, "Orders successfully", result);
+      })
+      .catch((err) => {
+        helper.printError(res, 500, err.message);
+      });
+  },
+
+  createCart: (req, res) => {
+    const {
+      userName,
+      orderType,
+      orderDetails,
+      orderPhone,
+      productName,
+      productImage,
+      price,
+    } = req.body;
+    const cart = req.body.cart;
+    const result = [];
+    cart.map((data, index) => {
+      const dataCart = {
+        userName,
+        orderType,
+        orderDetails,
+        orderPhone,
+        productName,
+        productImage,
+        price,
+        size: data.size,
+        amount: data.amount,
+      };
+      result.push(dataCart);
+      ordersModel.createCart(dataCart);
+    });
+    helper.printSuccess(res, 200, "Create cart successfully", result);
+  },
+
+  findCart: (req, res) => {
+    const userName = req.params.user;
+
+    ordersModel
+      .getCart(userName)
+      .then((result) => {
+        if (result < 1) {
+          helper.printError(res, 400, "Cart not found");
+          return;
+        }
+        helper.printSuccess(res, 200, "Find cart successfully", result);
+      })
+      .catch((err) => {
+        helper.printError(res, 500, err.message);
+      });
   },
 
   readAll: async (req, res) => {
