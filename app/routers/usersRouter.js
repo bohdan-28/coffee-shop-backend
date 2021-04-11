@@ -13,6 +13,7 @@ router
   .post("/auth/forgot-password", usersController.forgotPassword)
   .put("/auth/reset-password", usersController.resetPassword)
   .put("/:id", multer.uploadImage.single("image"), usersController.update)
+  .put("/edit-password/:id", usersController.updatePassword)
   .delete("/:id", auth.verification(), auth.isAdmin(), usersController.delete);
 
 module.exports = router;

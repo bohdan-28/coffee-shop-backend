@@ -7,6 +7,8 @@ router
   .get("/", auth.verification(), ordersController.readAll)
   .get("/:inv", auth.verification(), ordersController.readDetail)
   .post("/", auth.verification(), ordersController.create)
+  .post("/cart", auth.verification(), ordersController.createCart)
+  .get("/cart/user/:user", auth.verification(), ordersController.findCart)
   .put("/:inv", auth.verification(), ordersController.updateOrders)
   .delete("/:inv", auth.verification(), ordersController.delete);
 

@@ -28,4 +28,14 @@ module.exports = {
     });
     return schema.validate(users);
   },
+  validationUsersUpdatePassword: (users) => {
+    const schema = Joi.object({
+      password: Joi.string().min(8).required().strict(),
+      confirmPassword: Joi.string()
+        .valid(Joi.ref("password"))
+        .required()
+        .strict(),
+    });
+    return schema.validate(users);
+  },
 };
