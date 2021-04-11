@@ -63,11 +63,13 @@ exports.createUsers = (data) => {
                   if (!err) {
                     resolve(result);
                   } else {
+                    // console.log(err.message);
                     reject(new Error("Internal server error"));
                   }
                 }
               );
             } else {
+              console.log(err.message);
               reject(new Error("Internal server error"));
             }
           });
