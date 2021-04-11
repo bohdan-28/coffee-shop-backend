@@ -6,8 +6,10 @@ const ordersController = require("../controllers/ordersControllers");
 router
   .get("/", auth.verification(), ordersController.readAll)
   .get("/:inv", auth.verification(), ordersController.readDetail)
+  .get("/history/byid", auth.verification(), ordersController.getHistory)
   .post("/", auth.verification(), ordersController.create)
   .put("/:inv", auth.verification(), ordersController.updateOrders)
-  .delete("/:inv", auth.verification(), ordersController.delete);
+  .delete("/:inv", auth.verification(), ordersController.delete)
+  .delete("/history/byid/:id", auth.verification(), ordersController.deleteHisto);
 
 module.exports = router;

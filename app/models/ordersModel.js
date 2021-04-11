@@ -97,6 +97,20 @@ module.exports = {
       );
     });
   },
+  detailHisto: (id) => {
+    return new Promise((resolve, reject) => {
+      connection.query(
+        `SELECT id, productName as product, productImage as image, size, amount, price FROM order_body WHERE userID = ${id}`,
+        (error, result) => {
+          if (error) {
+            reject(new Error(error));
+          } else {
+            resolve(result);
+          }
+        }
+      );
+    });
+  },
 
   //updatebodyorder
   updateHeadOrder: (data, inv) => {
@@ -138,6 +152,22 @@ module.exports = {
       connection.query(
         `DELETE order_body, order_head FROM order_head INNER JOIN order_body 
         WHERE order_body.inv=${inv} AND order_head.inv=${inv}`,
+        (error, result) => {
+          if (error) {
+            console.log("error delete", error.message);
+            reject(new Error(error));
+          } else {
+            resolve(result);
+          }
+        }
+      );
+    });
+  },
+  // Hapus history(order_body) Berdasarkan id history
+  deleteOrder: (id) => {
+    return new Promise((resolve, reject) => {
+      connection.query(
+        `DELETE FROM order_body WHERE id = ${id}`,
         (error, result) => {
           if (error) {
             console.log("error delete", error.message);
