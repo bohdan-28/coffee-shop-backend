@@ -36,6 +36,7 @@ module.exports = {
   },
 
   getAllProductsFavourite: (queryPage, queryPerPage, sortBy, order) => {
+    console.log("ini", sortBy);
     return new Promise((resolve, reject) => {
       connection.query(
         "SELECT COUNT(*) AS totalData FROM products LEFT JOIN categories ON products.categoryID = categories.id WHERE products.isFavorit = true",
@@ -52,7 +53,7 @@ module.exports = {
           }
           const firstData = perPage * page - perPage;
           connection.query(
-            `SELECT products.id, products.name as name, categories.name as category, products.price, products.image, products.description, products.size, products.deliveryMethod, 
+            `SELECT products.id as id, products.name as name, categories.name as category, products.price, products.image, products.description, products.size, products.deliveryMethod, 
             products.stock, products.totalSale, products.categoryID, products.hourStart, products.hourEnd, products.created_at FROM products LEFT JOIN categories ON products.categoryID = categories.id WHERE products.isFavorit = true ORDER BY ${sortBy} ${order} LIMIT ?, ?`,
             [firstData, perPage],
             (err, result) => {
