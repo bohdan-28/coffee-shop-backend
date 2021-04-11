@@ -223,7 +223,6 @@ module.exports = {
       helper.printError(res, 500, "Internal Server Error");
     }
   },
-
   // Tampilkan Detail Item Tiap Invoices
   readDetail: (req, res) => {
     try {
@@ -244,11 +243,38 @@ module.exports = {
               })
               .catch((err) => {
                 // Kalau salah parameternya
-                helper.printError(res, 400, "Wrong Parameter Type");
+                helper.printError(res, 400, "Wrong Parameter Type ");
               });
           } else {
             // kalau tidak ada datanya
             helper.printError(res, 400, "Data Not Found, Wrong Invoice");
+          }
+        })
+        .catch((err) => {
+          // Kalau salah parameternya
+          console.log(err.message);
+          helper.printError(res, 400, "Wrong Parameter Type");
+        });
+    } catch (err) {
+      // Kalau ada salah lainnya
+      helper.printError(res, 500, "Internal Server Error");
+    }
+  },
+  //tampilkan order body per user
+  getHistory: (req, res) => {
+    try {
+      // Ambil data dari parameter
+    const id = req.auth.id 
+      ordersModel
+        .detailHisto(id)
+        .then((response) => {
+          if (response.length != 0) {
+            helper.printSuccess(res, 200, "Show Detail Data Success", {
+              body: response
+            });
+          } else {
+            // kalau tidak ada datanya
+            helper.printError(res, 400, "Data Not Found");
           }
         })
         .catch((err) => {
@@ -260,7 +286,6 @@ module.exports = {
       helper.printError(res, 500, "Internal Server Error");
     }
   },
-
   //update orders
   updateOrders: (req, res) => {
     try {
@@ -328,6 +353,31 @@ module.exports = {
           } else {
             // Kalau tidak ada yang terhapus
             helper.printError(res, 400, "Nothing Deleted, Wrong Invoice");
+          }
+        })
+        .catch((err) => {
+          // Kalau ada salah di parameternya
+          helper.printError(res, 400, "Wrong Parameter Type");
+        });
+    } catch (err) {
+      // Kalau ada salah lainnya
+      console.log(err.message);
+      helper.printError(res, 500, "Internal Server Error");
+    }
+  },
+  //delete berdasar order id
+  deleteHisto: (req, res) => {
+    try {
+      const id = req.params.id;
+      ordersModel
+        .deleteOrder(id)
+        .then((response) => {
+          if (response.affectedRows != 0) {
+            // Kalau ada yang terhapus
+            helper.printSuccess(res, 200, "deleting History Success", response);
+          } else {
+            // Kalau tidak ada yang terhapus
+            helper.printError(res, 400, "Nothing Deleted, Wrong IDs");
           }
         })
         .catch((err) => {
