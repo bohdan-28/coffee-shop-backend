@@ -15,10 +15,10 @@ Backend for Coffee Application
    > - HOST = localhost
    > - PORT_FRONTEND = (Your frontend port number, ex:3000)
    > - DB_HOST = localhost
-   > - DB_USERNAME = (Your Database User)
-   > - DB_PASSWORD = (Your Database Password)
+   > - DB_USERNAME = (Your database user)
+   > - DB_PASSWORD = (Your database password)
    > - DB_NAME = coffee-shop
-   > - EMAIL_USER = (Your own email, ex: developerbohdan0@gmail.com)
+   > - EMAIL_USER = (Your own email, ex: user@gmail.com)
    > - EMAIL_PASS = (Your email password)
    > - SECRET_KEY = (Your own JWT key)
    > - REDIS_PORT = (Your redis port, ex: 6379)
@@ -57,7 +57,7 @@ Frontend dari aplikasi ini dapat dicek pada tautan berikut [coffee-shop-frontend
 - [nodemon](https://www.npmjs.com/package/nodemon)
 - [redis](https://www.npmjs.com/package/redis)
 
-*Created By:* 
+## Created By: 
 - [Nevalen Aginda Prasetyo](https://github.com/nevalenaginda)
 - [Chaerul Marwan](https://github.com/chaerulmarwan20)
 - [Herza Paramayudhanto](https://github.com/herzaparam)
