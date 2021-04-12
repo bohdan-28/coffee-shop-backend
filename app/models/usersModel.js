@@ -51,23 +51,28 @@ exports.createUsers = (data) => {
       "SELECT * FROM users WHERE email = ?",
       data.email,
       (err, result) => {
+        console.log('1', err);
         if (result.length > 0) {
           reject(new Error("Email has been registered"));
         } else {
           connection.query("INSERT INTO users SET ?", data, (err, result) => {
+           console.log('2', err);
             if (!err) {
               connection.query(
                 "SELECT * FROM users WHERE id = ?",
                 result.insertId,
                 (err, result) => {
+                  console.log('3', err);
                   if (!err) {
                     resolve(result);
                   } else {
+                    console.log('4', err);
                     reject(new Error("Internal server error"));
                   }
                 }
               );
             } else {
+              console.log('5', err);
               reject(new Error("Internal server error"));
             }
           });
@@ -208,10 +213,13 @@ exports.login = (data) => {
 
 exports.createUsersToken = (data) => {
   return new Promise((resolve, reject) => {
+    
     connection.query("INSERT INTO user_token SET ?", data, (err, result) => {
       if (!err) {
         resolve(result);
+        
       } else {
+        console.log('10');
         reject(new Error("Internal server error"));
       }
     });
