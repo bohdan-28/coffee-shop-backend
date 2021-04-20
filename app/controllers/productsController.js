@@ -126,8 +126,8 @@ module.exports = {
         deliveryMethod,
         stock,
         categoryID,
-        hourStart: req.body.hourStart ? `'${req.body.hourStart}'` : null,
-        hourEnd: req.body.hourEnd ? `'${req.body.hourEnd}'` : null,
+        hourStart: req.body.hourStart ? `${req.body.hourStart}` : null,
+        hourEnd: req.body.hourEnd ? `${req.body.hourEnd}` : null,
       };
       productsModel
         .createProduct(data)
