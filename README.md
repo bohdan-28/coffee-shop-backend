@@ -37,9 +37,6 @@ Backend for Coffee Application
 - CRUD Users
 - Redis Server
 
-## Frontend
-Frontend dari aplikasi ini dapat dicek pada tautan berikut [coffee-shop-frontend](https://github.com/bohdan-28/coffee-shop-frontend)
-
 ## NPM Packages Used
 - [Bcrypt](https://www.npmjs.com/package/bcrypt)
 - [Cors](https://www.npmjs.com/package/cors)
