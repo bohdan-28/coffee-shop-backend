@@ -64,5 +64,5 @@ Backend for Coffee Application
 ## Link:
 
 - [Frontend](https://github.com/bohdan-28/coffee-shop-frontend)
-- [Visit Project](https://bohdan-coffee-shop.netlify.app/)
+- [Visit Project](https://coffee-shop-bohdan.netlify.app/)
 
