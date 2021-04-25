@@ -1,4 +1,4 @@
-# Bohdan Developer Coffee-Backend
+# Bohdan Developer Coffee-Shop-Backend
 Backend for Coffee Application
 
 ## API Documentation
@@ -56,7 +56,7 @@ Backend for Coffee Application
 
 ## Created By: 
 1. Herza Paramayudhanto - Backend - PM
-2. Chaerul Marwan - Backend - Member
+2. Chaerul Marwan - Full Stack - Member
 3. Abu Dzar Al-ghifari - Frontend - Member
 4. Nevalen Aginda Prasetyo - Backend - Member
 5. Kevin Farid Alpharisy - Frontend -Member
