@@ -1,4 +1,4 @@
-# Bohdan Developer Coffee-Backend
+# Bohdan Developer Coffee-Shop-Backend
 Backend for Coffee Application
 
 ## API Documentation
@@ -37,9 +37,6 @@ Backend for Coffee Application
 - CRUD Users
 - Redis Server
 
-## Frontend
-Frontend dari aplikasi ini dapat dicek pada tautan berikut [coffee-shop-frontend](https://github.com/bohdan-28/coffee-shop-frontend)
-
 ## NPM Packages Used
 - [Bcrypt](https://www.npmjs.com/package/bcrypt)
 - [Cors](https://www.npmjs.com/package/cors)
@@ -58,6 +55,14 @@ Frontend dari aplikasi ini dapat dicek pada tautan berikut [coffee-shop-frontend
 - [redis](https://www.npmjs.com/package/redis)
 
 ## Created By: 
-- [Nevalen Aginda Prasetyo](https://github.com/nevalenaginda)
-- [Chaerul Marwan](https://github.com/chaerulmarwan20)
-- [Herza Paramayudhanto](https://github.com/herzaparam)
+1. Herza Paramayudhanto - Backend - PM
+2. Chaerul Marwan - Full Stack - Member
+3. Abu Dzar Al-ghifari - Frontend - Member
+4. Nevalen Aginda Prasetyo - Backend - Member
+5. Kevin Farid Alpharisy - Frontend -Member
+
+## Link:
+
+- [Frontend](https://github.com/bohdan-28/coffee-shop-frontend)
+- [Visit Project](https://coffee-shop-bohdan.netlify.app/)
+
