@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Apr 2021 pada 16.35
+-- Waktu pembuatan: 15 Bulan Mei 2021 pada 14.09
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 8.0.1
 
@@ -43,7 +43,17 @@ INSERT INTO `access_token` (`id`, `idUser`, `accessToken`, `ipAddress`) VALUES
 (2, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6InlvdXIgdXNlcm5hbWUiLCJmaXJzdG5hbWUiOiJ5b3VyIGZpcnN0bmFtZSIsImxhc3RuYW1lIjoieW91ciBsYXN0bmFtZSIsImFkZHJlc3MiOiJ5b3VyIGFkZHJlc3MiLCJnZW5kZXIiOiJtYWxlIiwiZGF0ZU9mQmlydGgiOiIyMDIxLTA0LTA4VDE3OjAwOjAwLjAwMFoiLCJyb2xlIjoyLCJpYXQiOjE2MTgxMTk1NjcsImV4cCI6MTYxODIwNTk2N30.N50H2h6chGvoERz_eB8f6Iz_Uo7YMtaaEDNdeI1NUEk', '192.168.43.107'),
 (3, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6InlvdXIgdXNlcm5hbWUiLCJmaXJzdG5hbWUiOiJ5b3VyIGZpcnN0bmFtZSIsImxhc3RuYW1lIjoieW91ciBsYXN0bmFtZSIsImFkZHJlc3MiOiJ5b3VyIGFkZHJlc3MiLCJnZW5kZXIiOiJtYWxlIiwiZGF0ZU9mQmlydGgiOiIyMDIxLTA0LTA4VDE3OjAwOjAwLjAwMFoiLCJyb2xlIjoyLCJpYXQiOjE2MTgxMzE1NjksImV4cCI6MTYxODIxNzk2OX0.yNDILfFCTiFqWkw4kxh5F2-tf30vuzKjsOaEWVN-Qd0', '192.168.43.107'),
 (4, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDhUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjIsImlhdCI6MTYxODE0OTAwNCwiZXhwIjoxNjE4MjM1NDA0fQ.eYguYnFHMBgVUs3W8mtDJ4-kiLItG1Az0ka9q-GAJQs', '192.168.43.107'),
-(5, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDhUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjIsImlhdCI6MTYxODE0OTgxMiwiZXhwIjoxNjE4MjM2MjEyfQ.80Pt5wjAZC_zu-2t5aWm9lv_5wzHZMUgrLEbqe1RoWw', '192.168.43.107');
+(5, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDhUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjIsImlhdCI6MTYxODE0OTgxMiwiZXhwIjoxNjE4MjM2MjEyfQ.80Pt5wjAZC_zu-2t5aWm9lv_5wzHZMUgrLEbqe1RoWw', '192.168.43.107'),
+(6, 2, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFlcnVsbWFyd2FuanI3QGdtYWlsLmNvbSIsInBob25lTnVtYmVyIjoiMDgxMjM0NTY3ODkiLCJ1c2VybmFtZSI6InlvdXIgdXNlcm5hbWUiLCJmaXJzdG5hbWUiOiJ5b3VyIGZpcnN0bmFtZSIsImxhc3RuYW1lIjoieW91ciBsYXN0bmFtZSIsImFkZHJlc3MiOiJ5b3VyIGFkZHJlc3MiLCJnZW5kZXIiOiJtYWxlIiwiZGF0ZU9mQmlydGgiOiIyMDIxLTA0LTEwVDE3OjAwOjAwLjAwMFoiLCJyb2xlIjoyLCJpYXQiOjE2MTgxNTk3MzcsImV4cCI6MTYxODI0NjEzN30.1DS5Zz5f249ximO5kZ4YjNGBAb0mJ65ezoSvxhsEcuM', '192.168.43.107'),
+(7, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDhUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjEsImlhdCI6MTYxODE5Njg5MCwiZXhwIjoxNjE4MjgzMjkwfQ.SXRVbAGRp67h_QFBik8FhVwPKf1ump6-wpc6oaemo2U', '192.168.43.107'),
+(8, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDhUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjIsImlhdCI6MTYxODE5OTkzNCwiZXhwIjoxNjE4Mjg2MzM0fQ.nwaNLaWZwC6JdEs6oPffZWocZfTPBgjwDIgVqeH1mWU', '192.168.43.107'),
+(9, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDdUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjIsImlhdCI6MTYxODIzMTkyOSwiZXhwIjoxNjE4MzE4MzI5fQ.yn22xqTaC7WKKhDDOFEX3ynKKNnSV1NB_W3amPJENF4', '192.168.43.107'),
+(10, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDdUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjIsImlhdCI6MTYxODMxMDA3OCwiZXhwIjoxNjE4Mzk2NDc4fQ.YBFya4dtlnFBvPuEhqtAkBreUriYayxgkAvjX5f2PSs', '192.168.43.107'),
+(11, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDZUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjIsImlhdCI6MTYxODMxMDE5NCwiZXhwIjoxNjE4Mzk2NTk0fQ.C-a1i_KgnbWjZHgvAcxyugYohnyfHVRqOrZskCBieuU', '192.168.43.107'),
+(12, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDZUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjEsImlhdCI6MTYxODkxNzk0NCwiZXhwIjoxNjE5MDA0MzQ0fQ.B3WrrcPMqg22rOu3VTtRznFldyCvlgq_ItY6RriuOtM', '192.168.43.107'),
+(13, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDZUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjEsImlhdCI6MTYxODkyMjQxOCwiZXhwIjoxNjE5MDA4ODE4fQ.q9siPm5hwhn_asRwwr_AZAGPhPqU7P4ZI7JBeVAeHEw', '192.168.43.107'),
+(14, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDZUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjEsImlhdCI6MTYxODkzMTg1OCwiZXhwIjoxNjE5MDE4MjU4fQ.8MU8Zi0eR3dI1C1sOzsnzNE5LJSLJLMyXS2J5ktoZuc', '192.168.43.107'),
+(15, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDZUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjEsImlhdCI6MTYyMDY0NzA2MywiZXhwIjoxNjIwNzMzNDYzfQ.TsLB3qw4RVcNH-Nwpa-BTDeZwVfOluV2jqnqqdHmlYU', '192.168.43.107');
 
 -- --------------------------------------------------------
 
@@ -114,8 +124,9 @@ CREATE TABLE `order_body` (
 --
 
 INSERT INTO `order_body` (`id`, `inv`, `userID`, `userName`, `productName`, `productImage`, `size`, `amount`, `price`, `isPending`, `created_at`, `updated_at`) VALUES
-(37, '1618150842380', 1, 'chaerulmarwan20', 'Nasi Goreng', 'images\\nasgor.jpg', 'R', 2, 15000, 1, '2021-04-11 21:20:42', '2021-04-11 21:20:42'),
-(38, '1618150842380', 1, 'chaerulmarwan20', 'Nasi Goreng', 'images\\nasgor.jpg', 'L', 1, 15000, 1, '2021-04-11 21:20:42', '2021-04-11 21:20:42');
+(47, '1618232071631', 1, 'chaerulmarwan20', 'Nasi Goreng', 'images\\nasgor.jpg', 'R', 2, 15000, 1, '2021-04-12 19:54:31', '2021-04-12 19:54:31'),
+(48, '1618232071631', 1, 'chaerulmarwan20', 'Nasi Goreng', 'images\\nasgor.jpg', 'L', 1, 15000, 1, '2021-04-12 19:54:31', '2021-04-12 19:54:31'),
+(49, '1618232071631', 1, 'chaerulmarwan20', 'Nasi Goreng', 'images\\nasgor.jpg', 'L', 1, 15000, 1, '2021-04-12 19:54:31', '2021-04-12 19:54:31');
 
 -- --------------------------------------------------------
 
@@ -142,7 +153,7 @@ CREATE TABLE `order_head` (
 --
 
 INSERT INTO `order_head` (`inv`, `cashierName`, `userName`, `orderType`, `orderDetails`, `orderPhone`, `paymentType`, `isPending`, `total`, `created_at`, `updated_at`) VALUES
-('1618150842380', 'Admin', 'chaerulmarwan20', 'Pick Up', '21:16', '081224685502', 'Bank Account', 1, 75000, '2021-04-11 21:20:42', '2021-04-11 21:20:42');
+('1618232071631', 'Admin', 'chaerulmarwan20', 'Dine In', '19:54', '081224685502', 'Credit Card', 1, 105000, '2021-04-12 19:54:31', '2021-04-12 19:54:31');
 
 -- --------------------------------------------------------
 
@@ -164,8 +175,8 @@ CREATE TABLE `products` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
   `deliveryMethod` varchar(50) NOT NULL,
   `isFavorit` tinyint(1) NOT NULL DEFAULT 0,
-  `hourStart` time DEFAULT NULL,
-  `hourEnd` time DEFAULT NULL
+  `hourStart` varchar(100) DEFAULT NULL,
+  `hourEnd` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -178,7 +189,7 @@ INSERT INTO `products` (`id`, `name`, `price`, `image`, `stock`, `totalSale`, `c
 (19, 'Creamy Ice Latte', 20000, 'images\\creamy-ice.jpg', 100, 0, 1, 'Nothing better than a cold iced coffee in the summer time heat. Tall glasses filled with a cold creamy coffee.', 'R L XL', '2021-04-10 15:31:44', '2021-04-10 15:31:44', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
 (20, 'Coffee Beer', 10000, 'images\\beer.jpg', 100, 0, 1, 'Coffee beer sendiri merupakan minuman soda kopi dan tidak mengandung alkohol.', 'R L XL', '2021-04-10 15:33:41', '2021-04-10 15:33:41', 'Dine In Door Delivery Pick Up', 0, '10:00:00', '18:00:00'),
 (21, 'Ramen', 30000, 'images\\ramen.jpg', 100, 0, 3, 'Ramen adalah masakan mi kuah Jepang yang berasal dari China.', 'R L XL', '2021-04-10 15:36:41', '2021-04-10 15:36:41', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
-(22, 'Nasi Goreng', 15000, 'images\\nasgor.jpg', 94, 6, 3, 'Nasi goreng adalah sebuah makanan berupa nasi yang digoreng dan diaduk dalam minyak goreng, margarin, atau mentega', 'R L XL', '2021-04-10 15:37:39', '2021-04-10 15:37:39', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
+(22, 'Nasi Goreng', 15000, 'images\\nasgor.jpg', 92, 8, 3, 'Nasi goreng adalah sebuah makanan berupa nasi yang digoreng dan diaduk dalam minyak goreng, margarin, atau mentega', 'R L XL', '2021-04-10 15:37:39', '2021-04-10 15:37:39', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
 (23, 'Ayam Goreng', 30000, 'images\\ayam.jpg', 100, 0, 3, 'Ayam goreng adalah hidangan yang dibuat dari daging ayam dicampur tepung bumbu yang digoreng dalam minyak goreng panas.', 'R L XL', '2021-04-10 15:38:26', '2021-04-10 15:38:26', 'Dine In Door Delivery Pick Up', 0, '10:00:00', '18:00:00'),
 (24, 'Ikan Bakar', 35000, 'images\\ikan.jpg', 100, 0, 3, 'Ikan bakar adalah hidangan ikan yang dibakar atau dipanggang di atas api atau bara api.', 'R L XL', '2021-04-10 15:39:33', '2021-04-10 15:39:33', 'Dine In Door Delivery Pick Up', 0, '10:00:00', '18:00:00'),
 (25, 'Thai Tea', 20000, 'images\\thai.jpg', 100, 0, 2, 'Teh Thailand biasanya dikenal sebagai minuman Thailand yang terbuat dari teh Ceylon, susu dan gula, serta disajikan panas atau dingin.', 'R L XL', '2021-04-10 15:40:12', '2021-04-10 15:40:12', 'Dine In Door Delivery Pick Up', 0, '10:00:00', '18:00:00'),
@@ -202,7 +213,7 @@ CREATE TABLE `users` (
   `lastname` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `gender` enum('male','female') NOT NULL,
-  `dateOfBirth` date NOT NULL,
+  `dateOfBirth` varchar(255) NOT NULL,
   `role` int(11) NOT NULL,
   `active` tinyint(1) NOT NULL,
   `image` varchar(255) NOT NULL
@@ -213,7 +224,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `phoneNumber`, `username`, `firstname`, `lastname`, `address`, `gender`, `dateOfBirth`, `role`, `active`, `image`) VALUES
-(1, 'chaerulmarwan20@gmail.com', '$2b$10$K9cfwH7j.0dIgaYDwwe/HuvSdrQ5tZ2ftNpyB3Vq6BfmeIWYH19xO', '081224685502', 'chaerulmarwan20', 'your firstname', 'your lastname', 'your address', 'male', '2021-04-09', 2, 1, 'images\\avatar.png');
+(1, 'chaerulmarwan20@gmail.com', '$2b$10$bxaCD3MSQyBlDj/lKaXddOSzh32vEgaz1NznlxPXqbTLfKDOtm75m', '081224685502', 'chaerulmarwan20', 'your firstname', 'your lastname', 'your address', 'male', '2021-04-06', 1, 1, 'images\\1620647074531-henry.png'),
+(2, 'chaerulmarwanjr7@gmail.com', '$2b$10$BvrtY8Q.bkzcWkiMZ1VVUeJ7x6L1DmqOY8MW.Ns2GBRknuIWa0yv6', '08123456789', 'your username', 'your firstname', 'your lastname', 'your address', 'male', '2021-04-11', 2, 1, 'images\\avatar.png');
 
 -- --------------------------------------------------------
 
@@ -291,13 +303,13 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT untuk tabel `access_token`
 --
 ALTER TABLE `access_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT untuk tabel `categories`
@@ -309,25 +321,25 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT untuk tabel `order_body`
 --
 ALTER TABLE `order_body`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
