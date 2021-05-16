@@ -127,7 +127,7 @@ module.exports = {
   },
 
   readAll: async (req, res) => {
-    console.log(req.auth)
+    console.log(req.auth);
     try {
       // Ambil Query dari URL
       const perPage = req.query.perPage ? req.query.perPage : "5";
@@ -264,13 +264,13 @@ module.exports = {
   getHistory: (req, res) => {
     try {
       // Ambil data dari parameter
-    const id = req.auth.id 
+      const id = req.auth.id;
       ordersModel
         .detailHisto(id)
         .then((response) => {
           if (response.length != 0) {
             helper.printSuccess(res, 200, "Show Detail Data Success", {
-              body: response
+              body: response,
             });
           } else {
             // kalau tidak ada datanya
@@ -366,28 +366,21 @@ module.exports = {
     }
   },
   //delete berdasar order id
-  deleteHisto: (req, res) => {
+  deleteHisto: async (req, res) => {
+    const id = req.params.id;
+    const order = req.body.order;
+
     try {
-      const id = req.params.id;
-      ordersModel
-        .deleteOrder(id)
-        .then((response) => {
-          if (response.affectedRows != 0) {
-            // Kalau ada yang terhapus
-            helper.printSuccess(res, 200, "deleting History Success", response);
-          } else {
-            // Kalau tidak ada yang terhapus
-            helper.printError(res, 400, "Nothing Deleted, Wrong IDs");
-          }
-        })
-        .catch((err) => {
-          // Kalau ada salah di parameternya
-          helper.printError(res, 400, "Wrong Parameter Type");
-        });
+      for (let i = 0; i < order.length; i++) {
+        const result = await ordersModel.deleteOrder(order[i], id);
+        if (result.affectedRows === 0) {
+          helper.printError(res, 400, "Error deleting order history");
+          return;
+        }
+      }
+      helper.printSuccess(res, 200, "Order history has been deleted", {});
     } catch (err) {
-      // Kalau ada salah lainnya
-      console.log(err.message);
-      helper.printError(res, 500, "Internal Server Error");
+      helper.printError(res, 500, err.message);
     }
   },
 };
