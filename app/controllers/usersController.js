@@ -247,7 +247,7 @@ exports.update = async (req, res) => {
     })
     .then((result) => {
       delete result[0].password;
-      helper.printSuccess(res, 200, "Users has been updated", result);
+      helper.printSuccess(res, 200, "Your data has been updated", result);
     })
     .catch((err) => {
       if (err.message === "Internal server error") {
