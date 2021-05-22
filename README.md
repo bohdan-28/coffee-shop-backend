@@ -1,68 +1,130 @@
-# Bohdan Developer Coffee-Shop-Backend
-Backend for Coffee Application
+<h1 align="center">Backend - Coffee Shop</h1>
 
-## API Documentation
-> You can check Postman API Documentation [Here](https://documenter.getpostman.com/view/13256965/TzCTZkQo)
+## Table of Contents
 
-## Application Instalation
-1. Make sure you already have Redis installed on your machine
-2. Clone coffee-shop-backend Repository
-3. Install Required NPM Packages 
-   > `npm install`
-4. Create database named `coffee-shop` and import `coffee-shop.sql` from this project folder
-5. Create `.env` files with this value
-   > - PORT = (Your backend port number, ex:8080)
-   > - HOST = localhost
-   > - PORT_FRONTEND = (Your frontend port number, ex:3000)
-   > - DB_HOST = localhost
-   > - DB_USERNAME = (Your database user)
-   > - DB_PASSWORD = (Your database password)
-   > - DB_NAME = coffee-shop
-   > - EMAIL_USER = (Your own email, ex: user@gmail.com)
-   > - EMAIL_PASS = (Your email password)
-   > - SECRET_KEY = (Your own JWT key)
-   > - REDIS_PORT = (Your redis port, ex: 6379)
-6. Start Redis Server
-   > `redis-server`
-7. Start Application
-   > `npm start`
+- [Introduction](#introduction)
+- [Features](#features)
+- [Built With](#built-with)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Documentation](#documentation)
+- [Link](#link)
+- [Authors](#authors)
+
+## Introduction
+
+Coffee Shop is a food ordering service application that gives customers complete control over ordering menus on their respective gadgets with direct payment options connected to the application. Premium features for a fast, effective and economical solution.
 
 ## Features
+
 - JWT Authentication
-- Multilevel Authorization (Admin and Customer)
+
+- Multilevel Authorization
+
 - Nodemailer For Mailer
+
 - Upload Image Multer
-- CRUD Products
-- CRUD Orders
-- CRUD Users
+
 - Redis Server
 
-## NPM Packages Used
+- Form Validation Using Joi
+
+- CRUD Orders
+
+- CRUD Products
+
+- CRUD Users
+
+## Built With
+
+- [ExpressJs](https://www.npmjs.com/package/express)
+- [MySQL](https://www.npmjs.com/package/mysql2)
 - [Bcrypt](https://www.npmjs.com/package/bcrypt)
 - [Cors](https://www.npmjs.com/package/cors)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
-- [Express](https://www.npmjs.com/package/express)
 - [JWT](https://www.npmjs.com/package/jsonwebtoken)
-- [lodash](https://www.npmjs.com/package/lodash)
-- [moment](https://www.npmjs.com/package/moment)
-- [multer](https://www.npmjs.com/package/multer)
-- [morgan](https://www.npmjs.com/package/morgan)
-- [mysql2](https://www.npmjs.com/package/mysql2)
-- [joi](https://www.npmjs.com/package/joi)
-- [ip](https://www.npmjs.com/package/ip)
-- [nodemailer](https://www.npmjs.com/package/nodemailer)
-- [nodemon](https://www.npmjs.com/package/nodemon)
-- [redis](https://www.npmjs.com/package/redis)
+- [Lodash](https://www.npmjs.com/package/lodash)
+- [Moment](https://www.npmjs.com/package/moment)
+- [Multer](https://www.npmjs.com/package/multer)
+- [Morgan](https://www.npmjs.com/package/morgan)
+- [Joi](https://www.npmjs.com/package/joi)
+- [Ip](https://www.npmjs.com/package/ip)
+- [Nodemailer](https://www.npmjs.com/package/nodemailer)
+- [Nodemon](https://www.npmjs.com/package/nodemon)
+- [Redis](https://www.npmjs.com/package/redis)
 
-## Created By: 
-1. Herza Paramayudhanto - Backend - PM
-2. Chaerul Marwan - Full Stack - Member
-3. Abu Dzar Al-ghifari - Frontend - Member
-4. Nevalen Aginda Prasetyo - Backend - Member
-5. Kevin Farid Alpharisy - Frontend -Member
+## Prerequisites
 
-## Link:
+- [NodeJs](https://nodejs.org/en/download/)
+- [XAMPP](https://www.apachefriends.org/index.html)
 
-- [Frontend](https://github.com/bohdan-28/coffee-shop-frontend)
-- [Visit Project](https://coffee-shop-bohdan.netlify.app/)
+## Installation
 
+1. Clone the repository
+
+```
+git clone https://github.com/bohdan-28/coffee-shop-backend.git
+cd coffee-shop-backend
+```
+
+2. Install package
+
+```
+npm install
+```
+
+3. Create a new database with a name `coffee-shop` and import `coffee-shop.sql` from this repository
+
+4. Create .env file
+
+```
+# Host & Port
+HOST=
+PORT=
+PORT_FRONTEND=
+
+# Database
+DB_HOST=
+DB_USER=
+DB_PASS=
+DB_NAME=coffee-shop
+
+# Secret Key
+SECRET_KEY=
+
+# Email
+EMAIL_USER=
+EMAIL_PASS=
+
+# Redis
+REDIS_PORT=6379
+```
+
+5. Run application
+
+```
+npm run dev
+```
+
+Or
+
+```
+npm start
+```
+
+## Documentation
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/11970262/TzCV4Qae)
+
+## Link
+
+- :white_check_mark: [`Frontend Coffe Shop`](https://github.com/bohdan-28/coffee-shop-frontend)
+- :rocket: [`Publication`](https://coffee-shop-bohdan.netlify.app/)
+
+## Authors
+
+1.  [Herza Paramayudhanto](https://github.com/herzaparam) - Frontend - PM
+2.  [Chaerul Marwan](https://github.com/chaerulmarwan20) - Full Stack - Member
+3.  [Nevalen Aginda Prasetyo](https://github.com/nevalenaginda) - Backend - Member
+4.  [Abu Dzar Al-ghifari](https://github.com/abudzr) - Frontend - Member
+5.  [Kevin Farid Alpharisy](https://github.com/kevinfaridap) - Frontend - Member

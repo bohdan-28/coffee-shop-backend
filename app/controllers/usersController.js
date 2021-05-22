@@ -311,11 +311,6 @@ exports.delete = (req, res) => {
     });
 };
 
-const removeImage = (filePath) => {
-  filePath = path.join(__dirname, "../..", filePath);
-  fs.unlink(filePath, (err) => new Error(err));
-};
-
 exports.login = (req, res) => {
   const { email, password } = req.body;
 
@@ -455,4 +450,9 @@ exports.resetPassword = async (req, res) => {
   } catch (err) {
     helper.printError(res, 500, err.message);
   }
+};
+
+const removeImage = (filePath) => {
+  filePath = path.join(__dirname, "../..", filePath);
+  fs.unlink(filePath, (err) => new Error(err));
 };
