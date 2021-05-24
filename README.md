@@ -121,7 +121,7 @@ npm start
 
 ## Link
 
-- :white_check_mark: [`Frontend Coffe Shop`](https://github.com/bohdan-28/coffee-shop-frontend)
+- :white_check_mark: [`Frontend Coffee Shop`](https://github.com/bohdan-28/coffee-shop-frontend)
 - :rocket: [`Publication`](https://coffee-shop-bohdan.netlify.app/)
 
 ## Authors
