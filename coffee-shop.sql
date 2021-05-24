@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Bulan Mei 2021 pada 14.09
+-- Waktu pembuatan: 23 Bulan Mei 2021 pada 13.14
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 8.0.1
 
@@ -53,7 +53,13 @@ INSERT INTO `access_token` (`id`, `idUser`, `accessToken`, `ipAddress`) VALUES
 (12, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDZUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjEsImlhdCI6MTYxODkxNzk0NCwiZXhwIjoxNjE5MDA0MzQ0fQ.B3WrrcPMqg22rOu3VTtRznFldyCvlgq_ItY6RriuOtM', '192.168.43.107'),
 (13, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDZUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjEsImlhdCI6MTYxODkyMjQxOCwiZXhwIjoxNjE5MDA4ODE4fQ.q9siPm5hwhn_asRwwr_AZAGPhPqU7P4ZI7JBeVAeHEw', '192.168.43.107'),
 (14, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDZUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjEsImlhdCI6MTYxODkzMTg1OCwiZXhwIjoxNjE5MDE4MjU4fQ.8MU8Zi0eR3dI1C1sOzsnzNE5LJSLJLMyXS2J5ktoZuc', '192.168.43.107'),
-(15, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDZUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjEsImlhdCI6MTYyMDY0NzA2MywiZXhwIjoxNjIwNzMzNDYzfQ.TsLB3qw4RVcNH-Nwpa-BTDeZwVfOluV2jqnqqdHmlYU', '192.168.43.107');
+(15, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDZUMTc6MDA6MDAuMDAwWiIsInJvbGUiOjEsImlhdCI6MTYyMDY0NzA2MywiZXhwIjoxNjIwNzMzNDYzfQ.TsLB3qw4RVcNH-Nwpa-BTDeZwVfOluV2jqnqqdHmlYU', '192.168.43.107'),
+(16, 2, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFlcnVsbWFyd2FuanI3QGdtYWlsLmNvbSIsInBob25lTnVtYmVyIjoiMDgxMjM0NTY3ODkiLCJ1c2VybmFtZSI6InlvdXIgdXNlcm5hbWUiLCJmaXJzdG5hbWUiOiJ5b3VyIGZpcnN0bmFtZSIsImxhc3RuYW1lIjoieW91ciBsYXN0bmFtZSIsImFkZHJlc3MiOiJ5b3VyIGFkZHJlc3MiLCJnZW5kZXIiOiJtYWxlIiwiZGF0ZU9mQmlydGgiOiIyMDIxLTA0LTExIiwicm9sZSI6MiwiaWF0IjoxNjIxMTM1OTUzLCJleHAiOjE2MjEyMjIzNTN9.fLY1tzBVQ8qpbYYTHesw_Ymck6BzUjHylK_EzUsuuKs', '192.168.43.107'),
+(17, 2, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFlcnVsbWFyd2FuanI3QGdtYWlsLmNvbSIsInBob25lTnVtYmVyIjoiMDgxMjM0NTY3ODkiLCJ1c2VybmFtZSI6InlvdXIgdXNlcm5hbWUiLCJmaXJzdG5hbWUiOiJ5b3VyIGZpcnN0bmFtZSIsImxhc3RuYW1lIjoieW91ciBsYXN0bmFtZSIsImFkZHJlc3MiOiJ5b3VyIGFkZHJlc3MiLCJnZW5kZXIiOiJtYWxlIiwiZGF0ZU9mQmlydGgiOiIyMDIxLTA0LTExIiwicm9sZSI6MiwiaWF0IjoxNjIxMTQyMTQyLCJleHAiOjE2MjEyMjg1NDJ9.mDQj5EJWgktpPs1QFpfSiYzy3Ynb48BSay1uMgSaTW0', '192.168.43.107'),
+(18, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDYiLCJyb2xlIjoxLCJpYXQiOjE2MjEzNTQwMDEsImV4cCI6MTYyMTQ0MDQwMX0.EDOkeLm777SjHk99yFkZS2hYwHUoi2amKODPb7YEUDk', '192.168.43.107'),
+(19, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDYiLCJyb2xlIjoxLCJpYXQiOjE2MjE1MjAzMDMsImV4cCI6MTYyMTYwNjcwM30.jqxcGheSNTD08jWotJjKwVvdnFXSNBLzCv0uQ8oY-AU', '192.168.43.107'),
+(20, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDYiLCJyb2xlIjoxLCJpYXQiOjE2MjE2Njc4MzcsImV4cCI6MTYyMTc1NDIzN30.r3x-2I3Ql0-mjqVi7ANG0TOXudBztp0W48WP7Itgrbk', '192.168.43.107'),
+(21, 1, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFlcnVsbWFyd2FuMjBAZ21haWwuY29tIiwicGhvbmVOdW1iZXIiOiIwODEyMjQ2ODU1MDIiLCJ1c2VybmFtZSI6ImNoYWVydWxtYXJ3YW4yMCIsImZpcnN0bmFtZSI6InlvdXIgZmlyc3RuYW1lIiwibGFzdG5hbWUiOiJ5b3VyIGxhc3RuYW1lIiwiYWRkcmVzcyI6InlvdXIgYWRkcmVzcyIsImdlbmRlciI6Im1hbGUiLCJkYXRlT2ZCaXJ0aCI6IjIwMjEtMDQtMDYiLCJyb2xlIjoxLCJpYXQiOjE2MjE2NzE2NjgsImV4cCI6MTYyMTc1ODA2OH0.tOR6qoqTsFPtpEEP8U7C6akhU26YlVQhqO-A9ka4aGw', '192.168.43.107');
 
 -- --------------------------------------------------------
 
@@ -124,9 +130,8 @@ CREATE TABLE `order_body` (
 --
 
 INSERT INTO `order_body` (`id`, `inv`, `userID`, `userName`, `productName`, `productImage`, `size`, `amount`, `price`, `isPending`, `created_at`, `updated_at`) VALUES
-(47, '1618232071631', 1, 'chaerulmarwan20', 'Nasi Goreng', 'images\\nasgor.jpg', 'R', 2, 15000, 1, '2021-04-12 19:54:31', '2021-04-12 19:54:31'),
-(48, '1618232071631', 1, 'chaerulmarwan20', 'Nasi Goreng', 'images\\nasgor.jpg', 'L', 1, 15000, 1, '2021-04-12 19:54:31', '2021-04-12 19:54:31'),
-(49, '1618232071631', 1, 'chaerulmarwan20', 'Nasi Goreng', 'images\\nasgor.jpg', 'L', 1, 15000, 1, '2021-04-12 19:54:31', '2021-04-12 19:54:31');
+(67, '1621674380634', 1, 'chaerulmarwan20', 'Nasi Goreng', 'images\\nasgor.jpg', 'R', 1, 15000, 1, '2021-05-22 16:06:20', '2021-05-22 16:06:20'),
+(68, '1621674380634', 1, 'chaerulmarwan20', 'Nasi Goreng', 'images\\nasgor.jpg', 'XL', 1, 15000, 1, '2021-05-22 16:06:20', '2021-05-22 16:06:20');
 
 -- --------------------------------------------------------
 
@@ -153,7 +158,19 @@ CREATE TABLE `order_head` (
 --
 
 INSERT INTO `order_head` (`inv`, `cashierName`, `userName`, `orderType`, `orderDetails`, `orderPhone`, `paymentType`, `isPending`, `total`, `created_at`, `updated_at`) VALUES
-('1618232071631', 'Admin', 'chaerulmarwan20', 'Dine In', '19:54', '081224685502', 'Credit Card', 1, 105000, '2021-04-12 19:54:31', '2021-04-12 19:54:31');
+('1618232071631', 'Admin', 'chaerulmarwan20', 'Dine In', '19:54', '081224685502', 'Credit Card', 1, 105000, '2021-04-12 19:54:31', '2021-04-12 19:54:31'),
+('1621135999767', 'Admin', 'your username', 'Dine In', '10:32', '08123456789', 'Credit Card', 1, 90000, '2021-05-16 10:33:19', '2021-05-16 10:33:19'),
+('1621137134405', 'Admin', 'your username', 'Dine In', '10:52', '08123456789', 'Cash on Delivery', 1, 70000, '2021-05-16 10:52:14', '2021-05-16 10:52:14'),
+('1621137240594', 'Admin', 'your username', 'Pick Up', '10:53', '08123456789', 'Bank Account', 1, 60000, '2021-05-16 10:54:00', '2021-05-16 10:54:00'),
+('1621137533630', 'Admin', 'your username', 'Pick Up', '10:58', '08123456789', 'Credit Card', 1, 60000, '2021-05-16 10:58:53', '2021-05-16 10:58:53'),
+('1621137820745', 'Admin', 'your username', 'Dine In', '11:3', '08123456789', 'Bank Account', 1, 50000, '2021-05-16 11:03:40', '2021-05-16 11:03:40'),
+('1621142162107', 'Admin', 'your username', 'Door Delivery', '12:15', '08123456789', 'Credit Card', 1, 45000, '2021-05-16 12:16:02', '2021-05-16 12:16:02'),
+('1621142181465', 'Admin', 'your username', 'Dine In', '12:16', '08123456789', 'Bank Account', 1, 90000, '2021-05-16 12:16:21', '2021-05-16 12:16:21'),
+('1621354473611', 'Admin', 'chaerulmarwan20', 'Dine In', '23:13', '081224685502', 'Bank Account', 1, 45000, '2021-05-18 23:14:33', '2021-05-18 23:14:33'),
+('1621521667015', 'Admin', 'chaerulmarwan20', 'Dine In', '21:40', '081224685502', 'Bank Account', 1, 50000, '2021-05-20 21:41:07', '2021-05-20 21:41:07'),
+('1621522048841', 'Admin', 'chaerulmarwan20', 'Dine In', '21:47', '081224685502', 'Credit Card', 1, 45000, '2021-05-20 21:47:28', '2021-05-20 21:47:28'),
+('1621673478337', 'Admin', 'chaerulmarwan20', 'Dine In', '15:21', '081224685502', 'Bank Account', 1, 60000, '2021-05-22 15:51:18', '2021-05-22 15:51:18'),
+('1621674380634', 'Admin', 'chaerulmarwan20', 'Dine In', '15:59', '081224685502', 'Credit Card', 1, 60000, '2021-05-22 16:06:20', '2021-05-22 16:06:20');
 
 -- --------------------------------------------------------
 
@@ -185,11 +202,11 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `price`, `image`, `stock`, `totalSale`, `categoryID`, `description`, `size`, `created_at`, `updated_at`, `deliveryMethod`, `isFavorit`, `hourStart`, `hourEnd`) VALUES
 (17, 'Cold Brew Coffee', 30000, 'images\\cold-brew.jpg', 100, 0, 1, 'Cold brewing is a method of brewing that combines ground coffee and cool water and uses time instead of heat to extract the flavor. It is brewed in small batches and steeped for as long as 48 hours.', 'R L XL', '2021-04-10 15:28:26', '2021-04-10 15:28:26', 'Dine In Door Delivery Pick Up', 0, '10:00:00', '18:00:00'),
-(18, 'Hazelnut Coffee Late', 20000, 'images\\hazelnut.jpg', 100, 0, 1, 'Espresso and milk—flavoured with hazelnut syrup and then poured over ice—creates an ideal iced drink for those who love a lighter-roasted coffee. Created with love', 'R L XL', '2021-04-10 15:31:44', '2021-04-10 15:31:44', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
-(19, 'Creamy Ice Latte', 20000, 'images\\creamy-ice.jpg', 100, 0, 1, 'Nothing better than a cold iced coffee in the summer time heat. Tall glasses filled with a cold creamy coffee.', 'R L XL', '2021-04-10 15:31:44', '2021-04-10 15:31:44', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
+(18, 'Hazelnut Coffee Late', 20000, 'images\\hazelnut.jpg', 96, 4, 1, 'Espresso and milk flavoured with hazelnut syrup and then poured over ice creates an ideal iced drink for those who love a lighter roasted coffee.', 'R L XL', '2021-04-10 15:31:44', '2021-04-10 15:31:44', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
+(19, 'Creamy Ice Latte', 20000, 'images\\creamy-ice.jpg', 97, 3, 1, 'Nothing better than a cold iced coffee in the summer time heat. Tall glasses filled with a cold creamy coffee.', 'R L XL', '2021-04-10 15:31:44', '2021-04-10 15:31:44', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
 (20, 'Coffee Beer', 10000, 'images\\beer.jpg', 100, 0, 1, 'Coffee beer sendiri merupakan minuman soda kopi dan tidak mengandung alkohol.', 'R L XL', '2021-04-10 15:33:41', '2021-04-10 15:33:41', 'Dine In Door Delivery Pick Up', 0, '10:00:00', '18:00:00'),
-(21, 'Ramen', 30000, 'images\\ramen.jpg', 100, 0, 3, 'Ramen adalah masakan mi kuah Jepang yang berasal dari China.', 'R L XL', '2021-04-10 15:36:41', '2021-04-10 15:36:41', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
-(22, 'Nasi Goreng', 15000, 'images\\nasgor.jpg', 92, 8, 3, 'Nasi goreng adalah sebuah makanan berupa nasi yang digoreng dan diaduk dalam minyak goreng, margarin, atau mentega', 'R L XL', '2021-04-10 15:37:39', '2021-04-10 15:37:39', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
+(21, 'Ramen', 30000, 'images\\ramen.jpg', 98, 2, 3, 'Ramen adalah masakan mi kuah Jepang yang berasal dari China.', 'R L XL', '2021-04-10 15:36:41', '2021-04-10 15:36:41', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
+(22, 'Nasi Goreng', 15000, 'images\\nasgor.jpg', 81, 19, 3, 'Nasi goreng adalah sebuah makanan berupa nasi yang digoreng dan diaduk dalam minyak goreng, margarin, atau mentega', 'R L XL', '2021-04-10 15:37:39', '2021-04-10 15:37:39', 'Dine In Door Delivery Pick Up', 1, '10:00:00', '18:00:00'),
 (23, 'Ayam Goreng', 30000, 'images\\ayam.jpg', 100, 0, 3, 'Ayam goreng adalah hidangan yang dibuat dari daging ayam dicampur tepung bumbu yang digoreng dalam minyak goreng panas.', 'R L XL', '2021-04-10 15:38:26', '2021-04-10 15:38:26', 'Dine In Door Delivery Pick Up', 0, '10:00:00', '18:00:00'),
 (24, 'Ikan Bakar', 35000, 'images\\ikan.jpg', 100, 0, 3, 'Ikan bakar adalah hidangan ikan yang dibakar atau dipanggang di atas api atau bara api.', 'R L XL', '2021-04-10 15:39:33', '2021-04-10 15:39:33', 'Dine In Door Delivery Pick Up', 0, '10:00:00', '18:00:00'),
 (25, 'Thai Tea', 20000, 'images\\thai.jpg', 100, 0, 2, 'Teh Thailand biasanya dikenal sebagai minuman Thailand yang terbuat dari teh Ceylon, susu dan gula, serta disajikan panas atau dingin.', 'R L XL', '2021-04-10 15:40:12', '2021-04-10 15:40:12', 'Dine In Door Delivery Pick Up', 0, '10:00:00', '18:00:00'),
@@ -224,7 +241,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `phoneNumber`, `username`, `firstname`, `lastname`, `address`, `gender`, `dateOfBirth`, `role`, `active`, `image`) VALUES
-(1, 'chaerulmarwan20@gmail.com', '$2b$10$bxaCD3MSQyBlDj/lKaXddOSzh32vEgaz1NznlxPXqbTLfKDOtm75m', '081224685502', 'chaerulmarwan20', 'your firstname', 'your lastname', 'your address', 'male', '2021-04-06', 1, 1, 'images\\1620647074531-henry.png'),
+(1, 'chaerulmarwan20@gmail.com', '$2b$10$bxaCD3MSQyBlDj/lKaXddOSzh32vEgaz1NznlxPXqbTLfKDOtm75m', '081224685502', 'chaerulmarwan20', 'your firstname', 'your lastname', 'Ganeas', 'male', '2021-04-06', 1, 1, 'images\\1620647074531-henry.png'),
 (2, 'chaerulmarwanjr7@gmail.com', '$2b$10$BvrtY8Q.bkzcWkiMZ1VVUeJ7x6L1DmqOY8MW.Ns2GBRknuIWa0yv6', '08123456789', 'your username', 'your firstname', 'your lastname', 'your address', 'male', '2021-04-11', 2, 1, 'images\\avatar.png');
 
 -- --------------------------------------------------------
@@ -303,13 +320,13 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT untuk tabel `access_token`
 --
 ALTER TABLE `access_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT untuk tabel `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT untuk tabel `categories`
@@ -321,7 +338,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT untuk tabel `order_body`
 --
 ALTER TABLE `order_body`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`
