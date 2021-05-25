@@ -9,7 +9,6 @@ const helper = require("../helpers/printHelper");
 // export setiap controllers order
 module.exports = {
   create: async (req, res) => {
-    const arrOrders = req.body.arrOrders;
     const arrCart = req.body.arrCart;
     const idProduct = req.body.idProduct;
     const idUser = req.body.idUser;
@@ -20,9 +19,6 @@ module.exports = {
     const paymentType = req.body.paymentType;
     const total = req.body.total;
     const qty = req.body.qty;
-    const productName = req.body.productName;
-    const productImage = req.body.productImage;
-    const price = req.body.price;
 
     try {
       const getUser = await ordersModel.getUser(idUser);
@@ -55,22 +51,22 @@ module.exports = {
         }
         await ordersModel.updateStock(qty, idProduct);
         await ordersModel.updateTotalSale(qty, idProduct);
-        arrOrders.map((data, index) => {
+        arrCart.map((data, index) => {
           const orderBody = {
             inv: invoice,
             userID: idUser,
-            userName: userName,
-            productName: productName,
-            productImage: productImage,
+            userName: data.userName,
+            productName: data.productName,
+            productImage: data.productImage,
             size: data.size,
             amount: data.amount,
-            price: price,
+            price: data.price,
             isPending: true,
           };
           ordersModel.createBodyOrder(orderBody);
         });
         arrCart.forEach((data, index) => {
-          ordersModel.deleteCart(data);
+          ordersModel.deleteCart(data.id);
         });
         helper.printSuccess(res, 200, "Orders successfully", result);
       })
